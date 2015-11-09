@@ -1,0 +1,10 @@
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.XML
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.exe
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\bin\Debug\L2.Net.dll
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\bin\Debug\L2.Net.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\bin\Debug\L2.Net.xml
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\obj\Debug\L2.Net.LoginService.exe
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\obj\Debug\L2.Net.LoginService.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\obj\Debug\L2.Net.LoginService.csprojResolveAssemblyReference.cache
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.exe.config

@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>L2.Net.NpcService</name>
+    </assembly>
+    <members>
+        <member name="T:L2.Net.NpcService.Network.CacheServiceConnection">
+            <summary>
+            Provides connection between cache service and npc service.
+            </summary>
+        </member>
+        <member name="F:L2.Net.NpcService.Network.CacheServiceConnection.AutoReconnectToRemoteService">
+            <summary>
+            Indicates, if currently connected service has to reconnect to remote service automatically, when connection was lost.
+            </summary>
+        </member>
+        <member name="F:L2.Net.NpcService.Network.CacheServiceConnection.Connection">
+            <summary>
+            Cache server connection object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.CacheServiceConnection.UnsafeInitialize">
+            <summary>
+            Initializes service in unsafe mode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.CacheServiceConnection.Initialize(System.Net.IPEndPoint,System.TimeSpan)">
+            <summary>
+            Initializes connection.
+            </summary>
+            <param name="remoteEP">Remote cache service endpoint.</param>
+            <param name="reconnectAttemptInterval">Interval between reconnection attempts.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.CacheServiceConnection.Connection_OnDisconnected(System.Int32,L2.Net.Network.NetworkClient,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been aborted.
+            </summary>
+            <param name="errorCode">Error code.</param>
+            <param name="client"><see cref="T:L2.Net.Network.NetworkClient"/> object.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.CacheServiceConnection.Connection_OnConnected(System.Net.IPEndPoint,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been established.
+            </summary>
+            <param name="endPoint">Remote <see cref="T:System.Net.IPEndPoint"/>.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.CacheServiceConnection.Send(L2.Net.Packet)">
+            <summary>
+            Sends <see cref="T:L2.Net.Packet"/> to cache service.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="P:L2.Net.NpcService.Network.CacheServiceConnection.Active">
+            <summary>
+            Indicates if service is connected to remote service.
+            </summary>
+        </member>
+        <member name="T:L2.Net.NpcService.Network.GameServiceConnection">
+            <summary>
+            Provides connection between game service and npc service.
+            </summary>
+        </member>
+        <member name="F:L2.Net.NpcService.Network.GameServiceConnection.AutoReconnectToRemoteService">
+            <summary>
+            Indicates, if currently connected service has to reconnect to remote service automatically, when connection was lost.
+            </summary>
+        </member>
+        <member name="F:L2.Net.NpcService.Network.GameServiceConnection.Connection">
+            <summary>
+            Remote network service connection object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.GameServiceConnection.UnsafeInitialize">
+            <summary>
+            Initializes service in unsafe mode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.GameServiceConnection.Initialize(System.Net.IPEndPoint,System.TimeSpan)">
+            <summary>
+            Initializes connection.
+            </summary>
+            <param name="remoteEP">Remote service endpoint.</param>
+            <param name="reconnectAttemptInterval">Interval between reconnection attempts.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.GameServiceConnection.Connection_OnDisconnected(System.Int32,L2.Net.Network.NetworkClient,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been aborted.
+            </summary>
+            <param name="errorCode">Error code.</param>
+            <param name="client"><see cref="T:L2.Net.Network.NetworkClient"/> object.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.GameServiceConnection.Connection_OnConnected(System.Net.IPEndPoint,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been established.
+            </summary>
+            <param name="endPoint">Remote <see cref="T:System.Net.IPEndPoint"/>.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.GameServiceConnection.Send(L2.Net.Packet)">
+            <summary>
+            Sends <see cref="T:L2.Net.Packet"/> to remote service.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="P:L2.Net.NpcService.Network.GameServiceConnection.Active">
+            <summary>
+            Indicates if service is connected to remote service.
+            </summary>
+        </member>
+        <member name="T:L2.Net.NpcService.Network.GameServiceRequestsHandlers">
+            <summary>
+            Game service requests handlers.
+            </summary>
+        </member>
+        <member name="F:L2.Net.NpcService.Network.GameServiceRequestsHandlers.Connection">
+            <summary>
+            Referenced <see cref="T:L2.Net.Network.InnerNetworkConnection"/> object.
+            </summary>
+        </member>
+        <member name="F:L2.Net.NpcService.Network.GameServiceRequestsHandlers.ConnectionID">
+            <summary>
+            Handler execution thread id.
+            </summary>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.GameServiceRequestsHandlers.#ctor(L2.Net.Network.InnerNetworkConnection@,System.Byte)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.NpcService.Network.GameServiceRequestsHandlers"/> class.
+            </summary>
+            <param name="connection">Referenced <see cref="T:L2.Net.Network.InnerNetworkConnection"/> object.</param>
+            <param name="connectionID">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Network.GameServiceRequestsHandlers.Handle(L2.Net.Packet)">
+            <summary>
+            Handles incoming <see cref="T:L2.Net.Packet"/> objects.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to handle.</param>
+        </member>
+        <member name="T:L2.Net.NpcService.Service">
+            <summary>
+            Main service class.
+            </summary>
+        </member>
+        <member name="M:L2.Net.NpcService.Service.Main">
+            <summary>
+            Main service start method.
+            </summary>
+        </member>
+        <member name="M:L2.Net.NpcService.Service.CurrentDomain_UnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Executes when service throws unhandled exception.
+            </summary>
+            <param name="sender">Exception sender.</param>
+            <param name="e"><see cref="T:System.UnhandledExceptionEventArgs"/> object.</param>
+        </member>
+        <member name="M:L2.Net.NpcService.Service.Terminate(L2.Net.Network.ServiceShutdownEventArgs)">
+            <summary>
+            Terminates current service instance.
+            </summary>
+            <param name="e">For more information, please see <see cref="T:L2.Net.Network.ServiceShutdownEventArgs"/> class.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,6 @@
+8/11/2015 4:37:24.1933 > [Logger] Initialized.
+8/11/2015 4:37:26.1171 > [ScriptsCompiler] Compiling C# scripts in .
+8/11/2015 4:37:26.8466 > [ScriptsCompiler] Compiling 1 CS files in 
+8/11/2015 4:37:43.0146 > [ScriptsCompiler] Complete (0 errors, 0 warnings)
+8/11/2015 4:37:46.4257 > Running MsSql database installation...
+8/11/2015 4:38:07.9238 > Continue? y/n

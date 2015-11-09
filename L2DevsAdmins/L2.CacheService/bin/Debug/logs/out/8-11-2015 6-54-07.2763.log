@@ -1,0 +1,18 @@
+8/11/2015 6:54:07.2900 > [Logger] Initialized.
+8/11/2015 6:54:07.3154 > [ScriptsCompiler] Compiling C# scripts in .
+8/11/2015 6:54:07.3359 > [ScriptsCompiler] Compiling 2 CS files in 
+8/11/2015 6:54:07.6953 > [ScriptsCompiler] Failed (1 errors, 0 warnings)
+8/11/2015 6:54:07.7138 > [ScriptsCompiler] ScriptsCompiler errors:
+8/11/2015 6:54:07.7304 > [ScriptsCompiler]  + MySql/MysqlDatabaseInstaller.cs:
+8/11/2015 6:54:07.7382 > [ScriptsCompiler]     CS0246: Line 6: The type or namespace name 'MySql' could not be found (are you missing a using directive or an assembly reference?)
+8/11/2015 6:54:07.7607 > [ScriptsCompiler]     CS0246: Line 39: The type or namespace name 'MySqlConnection' could not be found (are you missing a using directive or an assembly reference?)
+8/11/2015 6:54:07.7695 > [ScriptsCompiler]     CS0246: Line 127: The type or namespace name 'MySqlCommand' could not be found (are you missing a using directive or an assembly reference?)
+8/11/2015 6:54:07.7792 > [ScriptsCompiler] Warning: not all scripts were compiled!!!
+8/11/2015 6:54:31.2412 > [Listener] Network listener started on 127.0.0.1:3001
+8/11/2015 6:54:33.2539 > [Debug] Try set m_Socket
+8/11/2015 6:54:33.2607 > [InnerNetwork] Connection accepted for LoginService (0xc9)
+8/11/2015 6:54:33.3798 > [InnerNetwork] LoginService (0xc9) settings update done.
+8/11/2015 6:54:33.9892 > [Debug] Try set m_Socket
+8/11/2015 6:54:33.9921 > [InnerNetwork] Connection accepted for NpcService (0x65)
+8/11/2015 6:54:41.1064 > [Debug] Try set m_Socket
+8/11/2015 6:54:54.7929 > [InnerNetwork] Connection accepted for GameService (0x01)

@@ -1,0 +1,13 @@
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.CacheService.exe.config
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.CacheService.XML
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.CacheService.exe
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.CacheService.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.DataProvider.dll
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.dll
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.DataProvider.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.DataProvider.xml
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\bin\Debug\L2.Net.xml
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\obj\Debug\L2.Net.CacheService.csprojResolveAssemblyReference.cache
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\obj\Debug\L2.Net.CacheService.exe
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.CacheService\obj\Debug\L2.Net.CacheService.pdb

@@ -1,0 +1,1312 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>L2.Net.DataProvider</name>
+    </assembly>
+    <members>
+        <member name="T:L2.Net.DataProvider.Command">
+            <summary>
+            Base class for database commands.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Command.m_CommandText">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Command"/> text.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Command.m_Disposed">
+            <summary>
+            Dispose flag.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.#ctor">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.Command"/> class.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.#ctor(System.String)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.Command"/> class.
+            </summary>
+            <param name="commandText"><see cref="T:L2.Net.DataProvider.Command"/> text.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Release">
+            <summary>
+            Forces current <see cref="T:L2.Net.DataProvider.Command"/> object to release used objects.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Release(System.Boolean)">
+            <summary>
+            Forces current <see cref="T:L2.Net.DataProvider.Command"/> object to release used objects.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.ExecuteNonQuery">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/> without any output result.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.ExecuteRowsAffected(System.Int32@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Amount of rows, affected during <see cref="T:L2.Net.DataProvider.Command"/> execution.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Object@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Object"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Byte@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Byte"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.SByte@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.SByte"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Int16@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Int16"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.UInt16@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.UInt16"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Int32@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Int32"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.UInt32@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.UInt32"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Int64@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Int64"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.UInt64@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.UInt64"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Double@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Double"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.DateTime@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.DateTime"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.TimeSpan@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.TimeSpan"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.String@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.String"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Boolean@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Boolean"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Data.DataRow@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Data.DataRow"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Data.DataTable@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Data.DataTable"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Execute(System.Data.DataSet@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Data.DataSet"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:L2.Net.DataProvider.Command"/>.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Command.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:L2.Net.DataProvider.Command"/> and optionally releases the managed resources.
+            </summary>
+            <param name="dispose">True to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.DisconnectType">
+            <summary>
+            Database engine disconnect types.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.DisconnectType.OnShutdown">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Connection"/> was disconnected during shutdown (normally).
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.DisconnectType.OnException">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Connection"/> was disconnected because some <see cref="T:System.Exception"/> was thrown.
+            </summary>
+        </member>
+        <member name="T:L2.Net.DataProvider.ConnectionConnectedEventDelegate">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Connection"/> object connected event delegate.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.DataProvider.Connection"/> object that just connected to database engine.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.ConnectionDisconnectedEventDelegate">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Connection"/> object disconnected event delegate.
+            </summary>
+            <param name="connectionID">Disconnected <see cref="T:L2.Net.DataProvider.Connection"/> object unique id.</param>
+            <param name="type">Disconnection type.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.Connection">
+            <summary>
+            Base database engine connection class.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Connection.DBProvider">
+            <summary>
+            Current <see cref="T:L2.Net.DataProvider.Connection"/> object <see cref="T:L2.Net.DataProvider.Provider"/> reference.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Connection.ID">
+            <summary>
+            Current <see cref="T:L2.Net.DataProvider.Connection"/> object unique id.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Connection.m_Disposed">
+            <summary>
+            Dispose flag.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.Connection.OnConnected">
+            <summary>
+            Raises after current <see cref="T:L2.Net.DataProvider.Connection"/> object connected to database engine.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.Connection.OnDisconnected">
+            <summary>
+            Raises after current <see cref="T:L2.Net.DataProvider.Connection"/> object disconnected from database engine.
+            </summary>
+        </member>
+        <member name="P:L2.Net.DataProvider.Connection.Connected">
+            <summary>
+            Indicates if current <see cref="T:L2.Net.DataProvider.Connection"/> is connected to database engine.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Connection.Idle">
+            <summary>
+            Indicates if current <see cref="T:L2.Net.DataProvider.Connection"/> object is in idle state.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.#ctor">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.Connection"/> object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.#ctor(L2.Net.DataProvider.Provider,System.Byte)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.Connection"/> object.
+            </summary>
+            <param name="provider">Reference to current <see cref="T:L2.Net.DataProvider.Connection"/> <see cref="T:L2.Net.DataProvider.Provider"/>.</param>
+            <param name="connectionID">Current <see cref="T:L2.Net.DataProvider.Connection"/> unique id.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.Open">
+            <summary>
+            Opens current <see cref="T:L2.Net.DataProvider.Connection"/>.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.Close(System.Boolean)">
+            <summary>
+            Closes current <see cref="T:L2.Net.DataProvider.Connection"/>.
+            </summary>
+            <param name="reconnect">True, to force current <see cref="T:L2.Net.DataProvider.Connection"/> to reconnect to database engine, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.InternalOpen">
+            <summary>
+            Not safe <see cref="T:L2.Net.DataProvider.Connection"/> Open() method analog.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.InternalClose(System.Boolean)">
+            <summary>
+            Not safe <see cref="T:L2.Net.DataProvider.Connection"/> Close(bool reconnect) analog.
+            </summary>
+            <param name="reconnect">True, to force current <see cref="T:L2.Net.DataProvider.Connection"/> to reconnect to database engine, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:L2.Net.DataProvider.Connection"/>.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Connection.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:L2.Net.DataProvider.Connection"/> and optionally releases the managed resources.
+            </summary>
+            <param name="dispose">True to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.IConnectionsRotator`1">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Connection"/> objects rotator interface.
+            </summary>
+            <typeparam name="C"><see cref="T:L2.Net.DataProvider.Connection"/> object <see cref="T:System.Type"/>.</typeparam>
+        </member>
+        <member name="M:L2.Net.DataProvider.IConnectionsRotator`1.Enqueue(`0,System.Byte)">
+            <summary>
+            Enqueues specified <see cref="T:L2.Net.DataProvider.Connection"/> object to current <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> queue.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.DataProvider.Connection"/> object to enqueue.</param>
+            <param name="identity"><see cref="T:L2.Net.DataProvider.Connection"/> object unique id.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.IConnectionsRotator`1.Next">
+            <summary>
+            Gets next <see cref="T:L2.Net.DataProvider.Connection"/> object from current <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> queue.
+            </summary>
+            <returns>Next <see cref="T:L2.Net.DataProvider.Connection"/> object.</returns>
+        </member>
+        <member name="P:L2.Net.DataProvider.IConnectionsRotator`1.Count">
+            <summary>
+            Gets amount of active <see cref="T:L2.Net.DataProvider.Connection"/> objects in <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> queue.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.IConnectionsRotator`1.Release">
+            <summary>
+            Clears <see cref="T:L2.Net.DataProvider.Connection"/> objects queue and unlocks current <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> object.
+            </summary>
+            <returns>Currently active <see cref="T:L2.Net.DataProvider.Connection"/> objects.</returns>
+        </member>
+        <member name="P:L2.Net.DataProvider.IConnectionsRotator`1.Locked">
+            <summary>
+            Gets or sets value, that indicates if current <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> is locked.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.IConnectionsRotator`1.Contains(System.Byte)">
+            <summary>
+            Indicates if current <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> queue contains <see cref="T:L2.Net.DataProvider.Connection"/> with specified unique id.
+            </summary>
+            <param name="identity">Unique id to verify.</param>
+            <returns>True, if current <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> queue contains <see cref="T:L2.Net.DataProvider.Connection"/> with specified unique id, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.IConnectionsRotator`1.Remove(System.Byte)">
+            <summary>
+            Removes <see cref="T:L2.Net.DataProvider.Connection"/> object from <see cref="T:L2.Net.DataProvider.IConnectionsRotator`1"/> queue.
+            </summary>
+            <param name="identity"><see cref="T:L2.Net.DataProvider.Connection"/> object unique id.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.ConnectionsRotator`1">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Connection"/> objects rotator class.
+            </summary>
+            <typeparam name="C"><see cref="T:L2.Net.DataProvider.Connection"/> object <see cref="T:System.Type"/>.</typeparam>
+        </member>
+        <member name="F:L2.Net.DataProvider.ConnectionsRotator`1.m_Lock">
+            <summary>
+            Lock object.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.ConnectionsRotator`1.m_ActiveConnections">
+            <summary>
+            Active <see cref="T:L2.Net.DataProvider.Connection"/> objects queue.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.ConnectionsRotator`1.m_ConnectionsIdentity">
+            <summary>
+            Connections identity collection.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.ConnectionsRotator`1.m_Locked">
+            <summary>
+            Indicates if current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> is locked now.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.ConnectionsRotator`1.#ctor(System.Int32)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> class.
+            </summary>
+            <param name="poolSize">Default <see cref="T:L2.Net.DataProvider.Connection"/> objects queue capacity.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.ConnectionsRotator`1.Enqueue(`0,System.Byte)">
+            <summary>
+            Enqueues specified <see cref="T:L2.Net.DataProvider.Connection"/> object to current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> queue if it's not locked.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.DataProvider.Connection"/> object to enqueue.</param>
+            <param name="identity"><see cref="T:L2.Net.DataProvider.Connection"/> object unique id.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.ConnectionsRotator`1.Next">
+            <summary>
+            Gets next <see cref="T:L2.Net.DataProvider.Connection"/> object from current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> queue.
+            </summary>
+            <returns>Next <see cref="T:L2.Net.DataProvider.Connection"/> object.</returns>
+        </member>
+        <member name="P:L2.Net.DataProvider.ConnectionsRotator`1.Count">
+            <summary>
+            Gets amount of active <see cref="T:L2.Net.DataProvider.Connection"/> objects in <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> queue.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.ConnectionsRotator`1.Release">
+            <summary>
+            Clears <see cref="T:L2.Net.DataProvider.Connection"/> objects queue and unlocks current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> object.
+            </summary>
+            <returns>Currently active <see cref="T:L2.Net.DataProvider.Connection"/> objects.</returns>
+        </member>
+        <member name="P:L2.Net.DataProvider.ConnectionsRotator`1.Locked">
+            <summary>
+            Gets or sets value, that indicates if current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> is locked.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.ConnectionsRotator`1.Contains(System.Byte)">
+            <summary>
+            Indicates if current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> queue contains <see cref="T:L2.Net.DataProvider.Connection"/> with specified unique id.
+            </summary>
+            <param name="identity">Unique id to verify.</param>
+            <returns>True, if current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> queue contains <see cref="T:L2.Net.DataProvider.Connection"/> with specified unique id, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.ConnectionsRotator`1.Remove(System.Byte)">
+            <summary>
+            Removes <see cref="T:L2.Net.DataProvider.Connection"/> object from current <see cref="T:L2.Net.DataProvider.ConnectionsRotator`1"/> queue.
+            </summary>
+            <param name="identity"><see cref="T:L2.Net.DataProvider.Connection"/> object unique id.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.LazyQueueDumpEventHandler`1">
+            <summary>
+            Current <see cref="T:L2.Net.DataProvider.LazyCommandsQueue`1"/> event handler.
+            </summary>
+            <param name="queue"><see cref="T:L2.Net.DataProvider.Command"/> objects to be executed.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.ILazyCommandsQueue`1">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.LazyCommandsQueue`1"/> interface.
+            </summary>
+            <typeparam name="C"><see cref="T:L2.Net.DataProvider.Command"/> objects to be executed on next dump event.</typeparam>
+        </member>
+        <member name="T:L2.Net.DataProvider.LazyCommandsQueue`1">
+            <summary>
+            Represents lazy commands queue class.
+            </summary>
+            <typeparam name="C"><see cref="T:L2.Net.DataProvider.Command"/> objects to be executed on next dump event.</typeparam>
+        </member>
+        <member name="F:L2.Net.DataProvider.LazyCommandsQueue`1.m_Lock">
+            <summary>
+            Lock <see cref="T:System.Object"/>.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.LazyCommandsQueue`1.m_Queue">
+            <summary>
+            Main <see cref="T:L2.Net.DataProvider.Command"/> objects queue.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.LazyCommandsQueue`1.m_DumpInterval">
+            <summary>
+            Queue dump interval value.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.LazyCommandsQueue`1.m_DumpTimer">
+            <summary>
+            Dump <see cref="T:System.Timers.Timer"/>.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.LazyCommandsQueue`1.DumpEventHandler">
+            <summary>
+            Raises when current <see cref="T:L2.Net.DataProvider.LazyCommandsQueue`1"/> dumps all enqueued <see cref="T:L2.Net.DataProvider.Command"/> objects.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.LazyCommandsQueue`1.#ctor(System.TimeSpan)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.LazyCommandsQueue`1"/> class.
+            </summary>
+            <param name="dumpInterval">Queue dump interval.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.LazyCommandsQueue`1.Enqueue(`0)">
+            <summary>
+            Enqueues <see cref="T:L2.Net.DataProvider.Command"/> object to current <see cref="T:L2.Net.DataProvider.LazyCommandsQueue`1"/>.
+            </summary>
+            <param name="command"><see cref="T:L2.Net.DataProvider.Command"/> to enqueue.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.LazyCommandsQueue`1.SetupTimer">
+            <summary>
+            Dump <see cref="T:System.Timers.Timer"/> setup.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.LazyCommandsQueue`1.DumpTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Executes when dump timer raises Elapsed event.
+            </summary>
+            <param name="sender">Method caller.</param>
+            <param name="e"><see cref="T:System.Timers.ElapsedEventArgs"/> arguments.</param>
+        </member>
+        <member name="P:L2.Net.DataProvider.LazyCommandsQueue`1.DumpInterval">
+            <summary>
+            Gets or sets <see cref="T:L2.Net.DataProvider.LazyCommandsQueue`1"/> dump interval.
+            </summary>
+        </member>
+        <member name="T:L2.Net.DataProvider.SqlEngine">
+            <summary>
+            Sql engine types.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.SqlEngine.MsSql">
+            <summary>
+            MS SQL Server provider.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.SqlEngine.MySql">
+            <summary>
+            MySql Server provider.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.SqlEngine.Odbc">
+            <summary>
+            Odbc provider.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.SqlEngine.Oledb">
+            <summary>
+            Oledb provider.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.SqlEngine.Oracle">
+            <summary>
+            Oracle provider.
+            </summary>
+        </member>
+        <member name="T:L2.Net.DataProvider.ProviderInitializedEventDelegate">
+            <summary>
+            Data <see cref="T:L2.Net.DataProvider.Provider"/> initialized event delegate.
+            </summary>
+            <param name="type">Data <see cref="T:L2.Net.DataProvider.Provider"/> type.</param>
+            <param name="activeConnectionsCount">Active connections count.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.ProviderStoppedEventDelegate">
+            <summary>
+            Data <see cref="T:L2.Net.DataProvider.Provider"/> stopped event delegate.
+            </summary>
+        </member>
+        <member name="T:L2.Net.DataProvider.Provider">
+            <summary>
+            Data provider abstract class.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Provider.ConnectionString">
+            <summary>
+            Provider connection string.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Provider.Type">
+            <summary>
+            Current <see cref="T:L2.Net.DataProvider.Provider"/> <see cref="T:L2.Net.DataProvider.SqlEngine"/> type.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Provider.PoolSize">
+            <summary>
+            Connections pool capacity (1 by default).
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Provider.Initialized">
+            <summary>
+            Indicates if <see cref="T:L2.Net.DataProvider.Provider"/> is initialized.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.Provider.OnInitialized">
+            <summary>
+            Raises after <see cref="T:L2.Net.DataProvider.Provider"/> is been initialized (all connections opened and ready).
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.Provider.OnStopped">
+            <summary>
+            Raises after all active connections, used by current <see cref="T:L2.Net.DataProvider.Provider"/> was closed.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.Provider.QueueDumpInterval">
+            <summary>
+            Interval in which database updates will execute.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.#ctor(L2.Net.DataProvider.SqlEngine,System.String,System.TimeSpan)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.Provider"/> class.
+            </summary>
+            <param name="sqlType"><see cref="T:L2.Net.DataProvider.Provider"/> SQL type.</param>
+            <param name="connectionString">Connection string.</param>
+            <param name="queueDumpInterval">Interval in which lazy commands queue will execute collected commands.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.Initialize">
+            <summary>
+            Initializes current <see cref="T:L2.Net.DataProvider.Provider"/> object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.ConnectionConnected(L2.Net.DataProvider.Connection)">
+            <summary>
+            Executes when some of current <see cref="T:L2.Net.DataProvider.Provider"/> <see cref="T:L2.Net.DataProvider.Connection"/> objects connects to database engine.
+            </summary>
+            <param name="connection">Connected <see cref="T:L2.Net.DataProvider.Connection"/>.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.ConnectionDisconnected(System.Byte,L2.Net.DataProvider.DisconnectType)">
+            <summary>
+            Executes when some of current <see cref="T:L2.Net.DataProvider.Provider"/> <see cref="T:L2.Net.DataProvider.Connection"/> objects disconnects from database engine.
+            </summary>
+            <param name="connectionID">Disconnected <see cref="T:L2.Net.DataProvider.Connection"/> unique id.</param>
+            <param name="type">Disconnection type.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.ServiceAudit(System.Byte,System.Byte,L2.Net.ServiceAuditType,System.String,System.Object[])">
+            <summary>
+            Services audit record.
+            </summary>
+            <param name="serviceID">Service unique id.</param>
+            <param name="serviceType">Service type.</param>
+            <param name="auditType"><see cref="T:L2.Net.ServiceAuditType"/> parameter.</param>
+            <param name="formatString">Format string.</param>
+            <param name="args">Format string arguments.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.Worlds_Cache">
+            <summary>
+            Gets worlds list from database.
+            </summary>
+            <returns>Worlds list pre-cached data.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.User_Auth(L2.Net.Structs.Services.UserAuthenticationRequest,L2.Net.Network.LoginServiceSettings)">
+            <summary>
+            User authentication request processing.
+            </summary>
+            <param name="netRequest"><see cref="T:L2.Net.Structs.Services.UserAuthenticationRequest"/> to verify user data from.</param>
+            <param name="settings"><see cref="T:L2.Net.Network.LoginServiceSettings"/> object.</param>
+            <returns><see cref="T:L2.Net.Structs.Services.UserAuthenticationResponse"/> struct.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.User_Create(System.String,System.String,System.Byte)">
+            <summary>
+            User creation request processing.
+            </summary>
+            <param name="login">User login.</param>
+            <param name="password">User password.</param>
+            <param name="accessLevel">User account access level.</param>
+            <returns>User account unique id.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.Provider.User_Logout(System.Int32,System.DateTime,System.String,System.Byte)">
+            <summary>
+            Updates user data after it's logout.
+            </summary>
+            <param name="uid">User unique id.</param>
+            <param name="sessionStartTime">Session start time.</param>
+            <param name="ip">Ip-address, user was using.</param>
+            <param name="lastWorld">Last world, user played in.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.InstallationErrorEventHandler">
+            <summary>
+            Represents method that will handle database installation error event.
+            </summary>
+            <param name="e">Occurred <see cref="T:System.Exception"/>.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.DataBaseInstaller">
+            <summary>
+            Database installer interface.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.DataBaseInstaller.OnInstallationError">
+            <summary>
+            Occurs when some error happens during installation.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.DataBaseInstaller.ConnectionString">
+            <summary>
+            Database engine connection string.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.DataBaseInstaller.Engine">
+            <summary>
+            Database engine type.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.DataBaseInstaller.#ctor(L2.Net.DataProvider.SqlEngine)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.DataBaseInstaller"/> object.
+            </summary>
+            <param name="engine">Database engine type.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.DataBaseInstaller.Install">
+            <summary>
+            Installs scripts.
+            </summary>
+        </member>
+        <member name="T:L2.Net.DataProvider.MsSqlDataCommand">
+            <summary>
+            MsSql data command class.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataCommand.m_Command">
+            <summary>
+            <see cref="T:System.Data.SqlClient.SqlCommand"/> object which current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> operates on.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataCommand.m_CommandType">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> type.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataCommand.m_Parameters">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> parameters collection.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataCommand.m_Connection">
+            <summary>
+            Used <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> reference.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataCommand.m_Adapter">
+            <summary>
+            <see cref="T:System.Data.SqlClient.SqlDataAdapter"/> object.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataCommand.m_Table">
+            <summary>
+            <see cref="T:System.Data.DataTable"/> object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.#ctor">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.#ctor(System.String,System.Data.CommandType,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> object.
+            </summary>
+            <param name="commandText">Current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> text.</param>
+            <param name="commandType">Current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> <see cref="T:System.Data.CommandType"/>.</param>
+            <param name="parameters">Current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> <see cref="T:System.Data.SqlClient.SqlParameter"/> objects collection.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Prepare(L2.Net.DataProvider.MsSqlDataConnection@)">
+            <summary>
+             Prepares current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> to execute.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> to use.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Release">
+            <summary>
+            Releases resources, used by current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> during execution.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Release(System.Boolean)">
+            <summary>
+            Releases resources, used by current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> during execution.
+            </summary>
+            <param name="value">Execution return value.</param>
+            <returns>Execution return value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.ExecuteNonQuery">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> without any output result.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.ExecuteRowsAffected(System.Int32@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Amount of rows, affected during <see cref="T:L2.Net.DataProvider.Command"/> execution.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Object@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Object"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Byte@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Byte"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.SByte@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.SByte"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Int16@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Int16"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.UInt16@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.UInt16"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Int32@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Int32"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.UInt32@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.UInt32"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Int64@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Int64"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.UInt64@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.UInt64"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Double@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Double"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.DateTime@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.DateTime"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.TimeSpan@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.TimeSpan"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.String@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.String"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Boolean@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Boolean"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Data.DataRow@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Data.DataRow"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Data.DataTable@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Data.DataTable"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Execute(System.Data.DataSet@)">
+            <summary>
+            Executes current <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/>.
+            </summary>
+            <param name="value">Reference to return <see cref="T:System.Data.DataSet"/> value.</param>
+            <returns>True, if command executed successfully, otherwise false.</returns>
+        </member>
+        <member name="P:L2.Net.DataProvider.MsSqlDataCommand.Parameters">
+            <summary>
+            Provides access to <see cref="T:System.Data.SqlClient.SqlCommand"/> parameters collection.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataCommand.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> and optionally releases the managed resources.
+            </summary>
+            <param name="dispose">True to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.MsSqlDataConnection">
+            <summary>
+            DataProvider MsSql connection class.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataConnection.dbValidation">
+            <summary>
+            Temp hack to check if database is aviable.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataConnection.SqlServerConnection">
+            <summary>
+            <see cref="T:System.Data.SqlClient.SqlConnection"/> object.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.MsSqlDataConnection.OnConnected">
+            <summary>
+            Raises when current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> object connects to database engine.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.MsSqlDataConnection.OnDisconnected">
+            <summary>
+            Raises when current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> object disconnects to database engine.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataConnection.#ctor">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataConnection.#ctor(L2.Net.DataProvider.MsSqlDataProvider,System.Byte,System.Boolean)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> object.
+            </summary>
+            <param name="provider"><see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> that current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> is created by.</param>
+            <param name="connectionID">Current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> unique id.</param>
+            <param name="openOnInitialize">If true, opens connection to database engine just after initialization.</param>
+        </member>
+        <member name="P:L2.Net.DataProvider.MsSqlDataConnection.Connected">
+            <summary>
+            Indicates if current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> is connected to database engine.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataConnection.Open">
+            <summary>
+            Opens current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> database engine connection.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataConnection.Close(System.Boolean)">
+            <summary>
+            Closes current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> database engine connection.
+            </summary>
+            <param name="reconnect"></param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataConnection.InternalClose(System.Boolean)">
+            <summary>
+            Closes connection to database engine.
+            </summary>
+            <param name="reconnect">If true, current <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> object will attempt to reconnect to database engine.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataConnection.InternalOpen">
+            <summary>
+            Opens connection to database engine.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataConnection.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> and optionally releases the managed resources.
+            </summary>
+            <param name="dispose">True to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.MsSqlDataProvider">
+            <summary>
+            Microsoft SQL Server data provider class.
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.MsSqlDataProvider.OnInitialized">
+            <summary>
+            Raises after <see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> was initialized (all connections are open).
+            </summary>
+        </member>
+        <member name="E:L2.Net.DataProvider.MsSqlDataProvider.OnStopped">
+            <summary>
+            Raises when <see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> has not any active <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/>.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataProvider.m_ActiveConnections">
+            <summary>
+            Active <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> objects rotator.
+            </summary>
+        </member>
+        <member name="F:L2.Net.DataProvider.MsSqlDataProvider.m_CommandsQueue">
+            <summary>
+            Lazy cache commands queue.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.#ctor(System.String,System.Byte,System.TimeSpan)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> class.
+            </summary>
+            <param name="connectionString">Database engine connection string.</param>
+            <param name="poolSize"><see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> objects that <see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> will use.</param>
+            <param name="queueDumpInterval">Lazy <see cref="T:L2.Net.DataProvider.Command"/> objects queue dump interval.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.LazyQueue_DumpHandler(L2.Net.DataProvider.MsSqlDataCommand[])">
+            <summary>
+            Executes when lazy queue dumps actual <see cref="T:L2.Net.DataProvider.Command"/> objects collection.
+            </summary>
+            <param name="queue"><see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> objects to execute.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.LazyQueue_DumpHandlerThread(System.Object)">
+            <summary>
+            Start lazy cache dump <see cref="T:System.Threading.Thread"/>.
+            </summary>
+            <param name="q"><see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> objects array.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.Initialize">
+            <summary>
+            Initializes current <see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.ConnectionConnected(L2.Net.DataProvider.Connection)">
+            <summary>
+            Executes when some of current <see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> objects connects to database engine.
+            </summary>
+            <param name="connection">Connected <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/>.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.ConnectionDisconnected(System.Byte,L2.Net.DataProvider.DisconnectType)">
+            <summary>
+            Executes when some of current <see cref="T:L2.Net.DataProvider.MsSqlDataProvider"/> <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> objects disconnects from database engine.
+            </summary>
+            <param name="connectionID">Disconnected <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> unique id.</param>
+            <param name="type">Disconnection type.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.ReleaseCommand(L2.Net.DataProvider.MsSqlDataCommand)">
+            <summary>
+            Releases provided <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> resources.
+            </summary>
+            <param name="msdc"><see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> object to release.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.SetConnection(L2.Net.DataProvider.MsSqlDataCommand@,L2.Net.DataProvider.MsSqlDataConnection)">
+            <summary>
+            Sets <see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> reference to provided <see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> object and prepares it.
+            </summary>
+            <param name="msdc"><see cref="T:L2.Net.DataProvider.MsSqlDataCommand"/> object.</param>
+            <param name="connection"><see cref="T:L2.Net.DataProvider.MsSqlDataConnection"/> to reference.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.ServiceAudit(System.Byte,System.Byte,L2.Net.ServiceAuditType,System.String,System.Object[])">
+            <summary>
+            Services audit record.
+            </summary>
+            <param name="serviceID">Service unique id.</param>
+            <param name="serviceType">Service type.</param>
+            <param name="auditType"><see cref="T:L2.Net.ServiceAuditType"/> parameter.</param>
+            <param name="formatString">Format string.</param>
+            <param name="args">Format string arguments.</param>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.Worlds_Cache">
+            <summary>
+            Gets worlds list from database.
+            </summary>
+            <returns>Worlds list pre-cached data.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.User_Auth(L2.Net.Structs.Services.UserAuthenticationRequest,L2.Net.Network.LoginServiceSettings)">
+            <summary>
+            User authentication request processing.
+            </summary>
+            <param name="netRequest"><see cref="T:L2.Net.Structs.Services.UserAuthenticationRequest"/> to verify user data from.</param>
+            <param name="settings"><see cref="T:L2.Net.Network.LoginServiceSettings"/> object.</param>
+            <returns><see cref="T:L2.Net.Structs.Services.UserAuthenticationResponse"/> struct.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.User_Create(System.String,System.String,System.Byte)">
+            <summary>
+            User creation request processing.
+            </summary>
+            <param name="login">User login.</param>
+            <param name="password">User password.</param>
+            <param name="accessLevel">User account access level.</param>
+            <returns>User account unique id.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.MsSqlDataProvider.User_Logout(System.Int32,System.DateTime,System.String,System.Byte)">
+            <summary>
+            Updates user data after it's logout.
+            </summary>
+            <param name="uid">User unique id.</param>
+            <param name="sessionStartTime">Session start time.</param>
+            <param name="ip">Ip-address, user was using.</param>
+            <param name="lastWorld">Last world, user played in.</param>
+        </member>
+        <member name="T:L2.Net.DataProvider.TypesConverter">
+            <summary>
+            Provides methods for object-to-type conversions, used on database operations.
+            </summary>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetByte(System.Object)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.Byte"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.Byte"/> value if <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetByte(System.Object,System.Byte)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.Byte"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.Byte"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.Byte"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def" /> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetSByte(System.Object)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.SByte"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.SByte"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetSByte(System.Object,System.SByte)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.SByte"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.SByte"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.SByte"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetShort(System.Object)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Int16"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.Int16"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetShort(System.Object,System.Int16)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Int16"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def">Default <see cref="T:System.Int16"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.Int16"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetUShort(System.Object)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.UInt16"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.UInt16"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetUShort(System.Object,System.UInt16)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.UInt16"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.UInt16"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.UInt16"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetInt(System.Object)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.Int32"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.Int32"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetInt(System.Object,System.Int32)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Int32"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.Int32"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.Int32"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetUInt(System.Object)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.UInt32"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.UInt32"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetUInt(System.Object,System.UInt32)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.UInt32"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.UInt32"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.UInt32"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetString(System.Object)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.String"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.String"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <see cref="F:System.String.Empty"/>.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetString(System.Object,System.String)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.String"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.String"/>  value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.String"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetLong(System.Object)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.Int64"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.Int64"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetLong(System.Object,System.Int64)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Int64"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.Int64"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.Int64"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetULong(System.Object)">
+            <summary>
+            Converts <see cref="T:System.Object"/> to <see cref="T:System.UInt64"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.UInt64"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetULong(System.Object,System.UInt64)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.UInt64"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.UInt64"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.UInt64"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetDouble(System.Object)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Double"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.Double"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise 0.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetDouble(System.Object,System.Double)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Double"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def"><see cref="T:System.Double"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.Double"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetDateTime(System.Object)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.DateTime"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.DateTime"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <see cref="F:System.DateTime.MinValue"/>.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetDateTime(System.Object,System.DateTime)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.DateTime"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def">Default <see cref="T:System.DateTime"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.DateTime"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetTimeSpan(System.Object)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.TimeSpan"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.TimeSpan"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <see cref="F:System.TimeSpan.Zero"/>.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetTimeSpan(System.Object,System.TimeSpan)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.TimeSpan"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def">Default <see cref="T:System.TimeSpan"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.TimeSpan"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetBoolean(System.Object)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Boolean"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <returns><see cref="T:System.Boolean"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.DataProvider.TypesConverter.GetBoolean(System.Object,System.Boolean)">
+            <summary>
+            Converts provided <see cref="T:System.Object"/> to <see cref="T:System.Boolean"/> value.
+            </summary>
+            <param name="obj"><see cref="T:System.Object"/> to convert.</param>
+            <param name="def">Default <see cref="T:System.Boolean"/> value to return if provided <see cref="T:System.Object"/> is not convertible.</param>
+            <returns><see cref="T:System.Boolean"/> value if provided <see cref="T:System.Object"/> is convertible, otherwise <paramref name="def"/> value.</returns>
+        </member>
+        <member name="T:L2.Net.ServiceAuditType">
+            <summary>
+            Services audition types.
+            </summary>
+        </member>
+        <member name="F:L2.Net.ServiceAuditType.ServiceStarted">
+            <summary>
+            Service started event.
+            </summary>
+        </member>
+        <member name="F:L2.Net.ServiceAuditType.NetworkListenerStarted">
+            <summary>
+            Network listener started event.
+            </summary>
+        </member>
+        <member name="F:L2.Net.ServiceAuditType.Connected">
+            <summary>
+            Service connected event.
+            </summary>
+        </member>
+        <member name="F:L2.Net.ServiceAuditType.Disconnected">
+            <summary>
+            Service disconnected event.
+            </summary>
+        </member>
+        <member name="F:L2.Net.ServiceAuditType.Terminated">
+            <summary>
+            Service terminated event.
+            </summary>
+        </member>
+        <member name="F:L2.Net.ServiceAuditType.ShuttedDown">
+            <summary>
+            Server goes down event.
+            </summary>
+        </member>
+    </members>
+</doc>

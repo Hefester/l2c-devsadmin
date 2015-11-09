@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>L2.Net.CacheService</name>
+    </assembly>
+    <members>
+        <member name="T:L2.Net.CacheService.DataProvider">
+            <summary>
+            Provides database engine access.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.DataProvider.Instance">
+            <summary>
+            <see cref="T:L2.Net.DataProvider.Provider"/> instance.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.DataProvider.Aviable">
+            <summary>
+            Indicates if <see cref="T:L2.Net.CacheService.DataProvider"/> is aviable now.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.DataProvider.Initialize(L2.Net.DataProvider.SqlEngine,System.String,System.Byte,System.TimeSpan)">
+            <summary>
+            Initializes data provider.
+            </summary>
+            <param name="sqlType"><see cref="T:L2.Net.DataProvider.SqlEngine"/> of data provider to use.</param>
+            <param name="connectionString">Database engine connection string.</param>
+            <param name="poolSize"><see cref="T:L2.Net.DataProvider.Provider"/> connections pool capacity.</param>
+            <param name="queueDumpInterval">Interval in which cache service will execute cached commands.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.DataProvider.OnProviderInitialized(L2.Net.DataProvider.SqlEngine,System.Byte)">
+            <summary>
+            Executes when <see cref="T:L2.Net.DataProvider.Provider"/> initialization is complete.
+            </summary>
+            <param name="type">Aviable <see cref="T:L2.Net.DataProvider.Provider"/> <see cref="T:L2.Net.DataProvider.SqlEngine"/>.</param>
+            <param name="activeConnectionsCount"><see cref="T:L2.Net.DataProvider.Provider"/> active connections count.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.DataProvider.OnProviderStopped">
+            <summary>
+            Executes when <see cref="T:L2.Net.DataProvider.Provider"/> has no active connections.
+            </summary>
+        </member>
+        <member name="P:L2.Net.CacheService.DataProvider.DataBase">
+            <summary>
+            Provides access to <see cref="T:L2.Net.DataProvider.Provider"/> operations.
+            </summary>
+        </member>
+        <member name="T:L2.Net.CacheService.Network.ConnectionsManager">
+            <summary>
+            Provides methods to operate over inner network connections.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Network.ConnectionsManager.m_ActiveConnections">
+            <summary>
+            Aviable connections list.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Network.ConnectionsManager.m_ResponseAccepted">
+            <summary>
+            Pre-cached initialization response.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Network.ConnectionsManager.m_ResponseRejected">
+            <summary>
+            Pre-cached initialization response.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.ConnectionsManager.AcceptConnection(System.Net.Sockets.Socket)">
+            <summary>
+            Serves for connections acceptance.
+            </summary>
+            <param name="socket">Accepted <see cref="T:System.Net.Sockets.Socket"/>.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.ConnectionsManager.OnRemoteConnectionError(System.Int32,L2.Net.Network.NetworkClient,System.Byte)">
+            <summary>
+            Occurs when client to one of active <see cref="T:L2.Net.Network.InnerNetworkClient"/>s brakes up.
+            </summary>
+            <param name="errorCode">Exception code, if aviable.</param>
+            <param name="client">Disconnected <see cref="T:L2.Net.Network.NetworkClient"/> object.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.ConnectionsManager.CloseConnection(System.Byte)">
+            <summary>
+            Closes existing client to remote service.
+            </summary>
+            <param name="remoteServiceId">Remote service unique id.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.ConnectionsManager.SetServiceSettings(L2.Net.Network.RemoteServiceSettings)">
+            <summary>
+            Sets <see cref="T:L2.Net.Network.RemoteServiceSettings"/> to specified service.
+            </summary>
+            <param name="settings"><see cref="T:L2.Net.Network.RemoteServiceSettings"/> object to set as settings.</param>
+        </member>
+        <member name="T:L2.Net.CacheService.Network.Handlers.GameServiceRequestsHandlers">
+            <summary>
+            Game service requests handler.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Network.Handlers.GameServiceRequestsHandlers.Service">
+            <summary>
+            Inner network client for incoming packets handling.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.Handlers.GameServiceRequestsHandlers.#ctor(L2.Net.Network.InnerNetworkClient@)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.CacheService.Network.Handlers.GameServiceRequestsHandlers"/> class.
+            </summary>
+            <param name="client">Referenced <see cref="T:L2.Net.Network.InnerNetworkClient"/> object.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.Handlers.GameServiceRequestsHandlers.Send(L2.Net.Packet)">
+            <summary>
+            Sends <see cref="T:L2.Net.Packet"/> to connected service.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.Handlers.GameServiceRequestsHandlers.Handle(L2.Net.Packet)">
+            <summary>
+            Handles incoming <see cref="T:L2.Net.Packet"/>.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to handle.</param>
+        </member>
+        <member name="T:L2.Net.CacheService.Network.Handlers.LoginServiceRequestsHandlers">
+            <summary>
+            Login service requests handler.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Network.Handlers.LoginServiceRequestsHandlers.Service">
+            <summary>
+            Inner network client for incoming packets handling.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.Handlers.LoginServiceRequestsHandlers.#ctor(L2.Net.Network.InnerNetworkClient@)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.CacheService.Network.Handlers.LoginServiceRequestsHandlers"/> class.
+            </summary>
+            <param name="client">Referenced <see cref="T:L2.Net.Network.InnerNetworkClient"/> object.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.Handlers.LoginServiceRequestsHandlers.Send(L2.Net.Packet)">
+            <summary>
+            Sends <see cref="T:L2.Net.Packet"/> to connected service.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.Handlers.LoginServiceRequestsHandlers.Handle(L2.Net.Packet)">
+            <summary>
+            Handles incoming <see cref="T:L2.Net.Packet"/>.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to handle.</param>
+        </member>
+        <member name="T:L2.Net.CacheService.Network.NetworkListener">
+            <summary>
+            Provides class, that handles incoming connections.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.Initialize(System.Net.IPEndPoint,System.Boolean)">
+            <summary>
+            Initializes listener service.
+            </summary>
+            <param name="localEndPoint">Local endpoint.</param>
+            <param name="enableFirewall">True, to force service use firewall, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.Disable">
+            <summary>
+            Disables network listener and stops listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.InitializeListener(System.Net.IPEndPoint)">
+            <summary>
+            Initializes listener.
+            </summary>
+            <param name="localEndPoint">Local endpoint.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.StartListenerThread(System.Boolean)">
+            <summary>
+            Tries to start listener thread.
+            </summary>
+            <param name="enableFirewall">True, if listener must use firewall, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.ListenerService_OnConnectionAccepted(System.Net.Sockets.Socket)">
+            <summary>
+            Executes after listener accepted new client.
+            </summary>
+            <param name="socket">New client socket.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.ListenerService_OnTerminated">
+            <summary>
+            Executes after listener was terminated.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.ListenerService_OnStopped">
+            <summary>
+            Executes after listener was stopped.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.ListenerService_OnStarted">
+            <summary>
+            Executes after listener was started.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.StopListener">
+            <summary>
+            Stops listener.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Network.NetworkListener.StopListenerThread">
+            <summary>
+            Stops listener thread.
+            </summary>
+        </member>
+        <member name="P:L2.Net.CacheService.Network.NetworkListener.LocalEndPoint">
+            <summary>
+            Gets local <see cref="T:System.Net.IPEndPoint"/> current that <see cref="T:L2.Net.CacheService.Network.NetworkListener"/> listens on.
+            </summary>
+        </member>
+        <member name="T:L2.Net.CacheService.Realtime.RealtimeManager">
+            <summary>
+            Class, that manages real time operations.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.StartUp">
+            <summary>
+            Startup operations.
+            </summary>
+        </member>
+        <member name="T:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers">
+            <summary>
+            Provides access to currently connected user sessions.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.m_ActiveSessions">
+            <summary>
+            Collection of connected users <see cref="T:L2.Net.UserSession"/> objects.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.m_ActiveUsers">
+            <summary>
+            Collection of connected users by their logins / session ids.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.Connected(System.Int32)">
+            <summary>
+            Indicates if session with provided session id exists in already connected sessions collection.
+            </summary>
+            <param name="sessionID"><see cref="T:L2.Net.UserSession"/> unique id.</param>
+            <returns>True, if there is <see cref="T:L2.Net.UserSession"/> with provided unique id in collection, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.Connected(System.String)">
+            <summary>
+            Indicates if user with provided login is already connected.
+            </summary>
+            <param name="login">User login.</param>
+            <returns>True, if <see cref="T:L2.Net.UserSession"/> with provided <see cref="F:L2.Net.UserSession.AccountName"/> exists in collection, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.Register(L2.Net.UserSession)">
+            <summary>
+            Registers provided <see cref="T:L2.Net.UserSession"/> in active sessions collection.
+            </summary>
+            <param name="session"><see cref="T:L2.Net.UserSession"/> to register.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.UpdateCurrentWorld(System.Int32,System.Byte)">
+            <summary>
+            Updates user session data: sets current world id.
+            </summary>
+            <param name="sessionID"><see cref="T:L2.Net.UserSession"/> unique id.</param>
+            <param name="worldID">Unique id of world, user just joined (or zero if disconnected).</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.Unregister(System.Int32)">
+            <summary>
+            Unregisters <see cref="T:L2.Net.UserSession"/> from connected users collection.
+            </summary>
+            <param name="sessionId"><see cref="T:L2.Net.UserSession"/> unique id.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.Unregister(System.String)">
+            <summary>
+            Unregisters <see cref="T:L2.Net.UserSession"/> from connected users collection.
+            </summary>
+            <param name="login">User login.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.ConnectedUsers.Find(System.Int32)">
+            <summary>
+            Searches <see cref="T:L2.Net.UserSession"/> in active connections collection.
+            </summary>
+            <param name="sessionID"><see cref="T:L2.Net.UserSession"/> unique id.</param>
+            <returns><see cref="T:L2.Net.UserSession"/> object if session was found, otherwise <see cref="F:L2.Net.UserSession.Null"/> value.</returns>
+        </member>
+        <member name="T:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo">
+            <summary>
+            Provides access to aviable / connected worlds data.
+            </summary>
+        </member>
+        <member name="F:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo.m_WorldsSummary">
+            <summary>
+            Worlds info collection.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo.Cache">
+            <summary>
+            Retrieves information about aviable worlds from database.
+            </summary>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo.Get">
+            <summary>
+            Gets <see cref="T:L2.Net.Structs.Services.WorldSummary"/> array.
+            </summary>
+            <returns><see cref="T:L2.Net.Structs.Services.WorldSummary"/> array.</returns>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo.SetActive(System.Byte)">
+            <summary>
+            Sets world as online and ready to user connections.
+            </summary>
+            <param name="id">World unique id.</param>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo.Contains(System.Byte)">
+            <summary>
+            Checks if current worlds info collection contains information about world with provided unique id.
+            </summary>
+            <param name="id">World unique id.</param>
+            <returns>True, if world with provided unique id exists, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo.IsOnline(System.Byte)">
+            <summary>
+            Returns true if world with provided unique id is online.
+            </summary>
+            <param name="id">World unique id.</param>
+            <returns>True if world with provided unique id is online, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.CacheService.Realtime.RealtimeManager.WorldsInfo.IsFull(System.Byte)">
+            <summary>
+            Returns true if world with provided unique id may accept next user.
+            </summary>
+            <param name="id">World unique id.</param>
+            <returns>False, if world is not full, otherwise true.</returns>
+        </member>
+        <member name="M:L2.Net.CacheService.Service.OnScriptsExecutionError(System.Exception)">
+            <summary>
+            Executes after some scripts execution error occurs.
+            </summary>
+            <param name="e">Occurred <see cref="T:System.Exception"/>.</param>
+        </member>
+    </members>
+</doc>

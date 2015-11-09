@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>L2.Net.GameService</name>
+    </assembly>
+    <members>
+        <member name="T:L2.Net.GameService.Core.World">
+            <summary>
+            Main game world class.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.Core.World.m_Initialized">
+            <summary>
+            Indicates if world was initialized yet.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.Core.World.StartUp">
+            <summary>
+            Initializes all needed world objects.
+            </summary>
+        </member>
+        <member name="P:L2.Net.GameService.Core.World.Initialized">
+            <summary>
+            Indicates if world was initialized yet.
+            </summary>
+        </member>
+        <member name="T:L2.Net.GameService.InnerNetwork.CacheServiceConnection">
+            <summary>
+            Provides connection between cache service and game service.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.InnerNetwork.CacheServiceConnection.AutoReconnectToRemoteService">
+            <summary>
+            Indicates, if currently connected service has to reconnect to remote service automatically, when connection was lost.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.InnerNetwork.CacheServiceConnection.Connection">
+            <summary>
+            Cache server connection object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.CacheServiceConnection.UnsafeInitialize">
+            <summary>
+            Initializes service in unsafe mode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.CacheServiceConnection.Initialize(System.Net.IPEndPoint,System.TimeSpan)">
+            <summary>
+            Initializes 'game to cache' connection.
+            </summary>
+            <param name="remoteEP">Remote cache service endpoint.</param>
+            <param name="reconnectAttemptInterval">Interval between reconnection attempts.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.CacheServiceConnection.Connection_OnDisconnected(System.Int32,L2.Net.Network.NetworkClient,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been aborted.
+            </summary>
+            <param name="errorCode">Error code.</param>
+            <param name="client"><see cref="T:L2.Net.Network.NetworkClient"/> object.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.CacheServiceConnection.Connection_OnConnected(System.Net.IPEndPoint,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been established.
+            </summary>
+            <param name="endPoint">Remote <see cref="T:System.Net.IPEndPoint"/>.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.CacheServiceConnection.Send(L2.Net.Packet)">
+            <summary>
+            Sends <see cref="T:L2.Net.Packet"/> to cache service.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="P:L2.Net.GameService.InnerNetwork.CacheServiceConnection.Active">
+            <summary>
+            Indicates if logins service is connected to cache service.
+            </summary>
+        </member>
+        <member name="T:L2.Net.GameService.InnerNetwork.ConnectionsManager">
+            <summary>
+            Npc service connections manager.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.InnerNetwork.ConnectionsManager.Active">
+            <summary>
+            Indicates if current game service has npc service opened connection(s).
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.InnerNetwork.ConnectionsManager.m_NpcServerConnection">
+            <summary>
+            Active npc service connection.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.ConnectionsManager.AcceptConnection(System.Net.Sockets.Socket)">
+            <summary>
+            Accepts incoming npc service connection.
+            </summary>
+            <param name="s">Accepted <see cref="T:System.Net.Sockets.Socket"/> object.</param>
+        </member>
+        <member name="T:L2.Net.GameService.InnerNetwork.GameServiceListener">
+            <summary>
+            Provides class, that handles inner network incoming connections.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.Initialize(System.Net.IPEndPoint,System.Boolean)">
+            <summary>
+            Initializes listener service.
+            </summary>
+            <param name="localEndPoint">Local endpoint.</param>
+            <param name="enableFirewall">True, to force service use firewall, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.Disable">
+            <summary>
+            Disables network listener and stops listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.Enable">
+            <summary>
+            Enables network listener and starts listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.InitializeListener(System.Net.IPEndPoint)">
+            <summary>
+            Initializes listener.
+            </summary>
+            <param name="localEndPoint">Local endpoint.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.StartListenerThread(System.Boolean)">
+            <summary>
+            Tries to start listener thread.
+            </summary>
+            <param name="enableFirewall">True, if listener must use firewall, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.ListenerService_OnConnectionAccepted(System.Net.Sockets.Socket)">
+            <summary>
+            Executes after listener accepted new client.
+            </summary>
+            <param name="socket">New client socket.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.ListenerService_OnTerminated">
+            <summary>
+            Executes after listener was terminated.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.ListenerService_OnStopped">
+            <summary>
+            Executes after listener was stopped.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.ListenerService_OnStarted">
+            <summary>
+            Executes after listener was started.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.StopListener">
+            <summary>
+            Stops listener.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.GameServiceListener.StopListenerThread">
+            <summary>
+            Stops listener thread.
+            </summary>
+        </member>
+        <member name="T:L2.Net.GameService.InnerNetwork.NpcServiceRequestsHandlers">
+            <summary>
+            Npc service requests handler.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.InnerNetwork.NpcServiceRequestsHandlers.Service">
+            <summary>
+            Inner network client for incoming packets handling.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.NpcServiceRequestsHandlers.#ctor(L2.Net.Network.InnerNetworkClient@)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.GameService.InnerNetwork.NpcServiceRequestsHandlers"/> class.
+            </summary>
+            <param name="client">Referenced <see cref="T:L2.Net.Network.InnerNetworkClient"/> object.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.NpcServiceRequestsHandlers.Send(L2.Net.Packet)">
+            <summary>
+            Sends <see cref="T:L2.Net.Packet"/> to connected service.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="M:L2.Net.GameService.InnerNetwork.NpcServiceRequestsHandlers.Handle(L2.Net.Packet)">
+            <summary>
+            Handles incoming <see cref="T:L2.Net.Packet"/>.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to handle.</param>
+        </member>
+        <member name="T:L2.Net.GameService.OuterNetwork.UserConnectionState">
+            <summary>
+            User connection state types.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionState.Disconnected">
+            <summary>
+            User is disconnected.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionState.Connected">
+            <summary>
+            User is connected.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionState.Authed">
+            <summary>
+            User is authorized.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionState.InGame">
+            <summary>
+            User is in game.
+            </summary>
+        </member>
+        <member name="T:L2.Net.GameService.OuterNetwork.UserConnection">
+            <summary>
+            Class, that represents client connection object.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnection.Session">
+            <summary>
+            Provides access to user session data.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnection.State">
+            <summary>
+            User connection state indicator.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnection.m_Crypt">
+            <summary>
+            Crypt object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.#ctor(System.Net.Sockets.Socket)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/> object.
+            </summary>
+            <param name="socket">Connection socket.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.BeginReceive">
+            <summary>
+            Begins receiving data from client.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.Handle(L2.Net.Packet)">
+            <summary>
+            Handles incoming packet.
+            </summary>
+            <param name="packet">Incoming packet.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.BeginSession">
+            <summary>
+            Session start method override, instead usual <see cref="M:L2.Net.GameService.OuterNetwork.UserConnection.BeginReceive"/>.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.SessionReceiveCallback(System.IAsyncResult)">
+            <summary>
+            Session start method override, instead usual ReceiveCallback.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.Send(L2.Net.Packet)">
+            <summary>
+            Sends packet to current <see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/>.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.SendNoCrypt(L2.Net.Packet)">
+            <summary>
+            Sends not encrypted packet to current <see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/>.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.ReceiveCallback(System.IAsyncResult)">
+            <summary>
+            Receive method.
+            </summary>       //72-2min
+        </member>
+        <member name="T:L2.Net.GameService.OuterNetwork.UserConnection.BlowFishKeygen">
+            <summary>
+            Helper-class.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnection.BlowFishKeygen.GetNext">
+            <summary>
+            Generates next random blowfish key.
+            </summary>
+            <returns>Next random blowfish key.</returns>
+        </member>
+        <member name="T:L2.Net.GameService.OuterNetwork.UserConnection.GameCrypt">
+            <summary>
+            Game crypt object class.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnection.GameCrypt.m_InputKey">
+            <summary>
+            Input crypt key.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnection.GameCrypt.m_OutputKey">
+            <summary>
+            Output crypt key.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:L2.Net.GameService.OuterNetwork.UserConnectionsListener" -->
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionsListener.m_ActiveConnections">
+            <summary>
+            Active <see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/> objects collection.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionsListener.m_ListenerService">
+            <summary>
+            Incoming connections <see cref="T:L2.Net.Network.Listener"/>.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionsListener.m_ListenerThread">
+            <summary>
+            <see cref="T:L2.Net.Network.Listener"/> <see cref="T:System.Threading.Thread"/>
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionsListener.m_Active">
+            <summary>
+            Indicates if <see cref="T:L2.Net.GameService.OuterNetwork.UserConnectionsListener"/> is active.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionsListener.m_LocalEndPoint">
+            <summary>
+            Local <see cref="T:System.Net.IPEndPoint"/>.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionsListener.m_Backlog">
+            <summary>
+            Local listener backlog.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.OuterNetwork.UserConnectionsListener.m_EnableFirewall">
+            <summary>
+            Indicates if <see cref="T:L2.Net.Network.Firewall"/> must be enabled.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.Initialize(System.Net.IPEndPoint,System.Int32,System.Boolean)">
+            <summary>
+            Initializes user connections listener.
+            </summary>
+            <param name="localEndPoint">Local ip endpoint.</param>
+            <param name="backlog">Backlog.</param>
+            <param name="enableFirewall">True, if firewall must be enabled, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.Disable">
+            <summary>
+            Disables network listener and stops listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.Enable">
+            <summary>
+            Enables network listener and starts listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.InitializeListener">
+            <summary>
+            Initializes listener.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.StartListenerThread">
+            <summary>
+            Tries to start listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.ListenerService_OnConnectionAccepted(System.Net.Sockets.Socket)">
+            <summary>
+            Executes after listener accepted new connection.
+            </summary>
+            <param name="socket">New connection socket.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.ListenerService_OnTerminated">
+            <summary>
+            Executes after listener was terminated.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.ListenerService_OnStopped">
+            <summary>
+            Executes after listener was stopped.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.ListenerService_OnStarted">
+            <summary>
+            Executes after listener was started.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.StopListener">
+            <summary>
+            Stops listener.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.StopListenerThread">
+            <summary>
+            Stops listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.RemoveFromActiveConnections(L2.Net.GameService.OuterNetwork.UserConnection)">
+            <summary>
+            Removes provided <see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/> object from active connections list.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/> object to remove from active connections list.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.CloseActiveConnection(L2.Net.GameService.OuterNetwork.UserConnection)">
+            <summary>
+            Closes active <see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/>.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/> object, which network must be closed.</param>
+        </member>
+        <member name="M:L2.Net.GameService.OuterNetwork.UserConnectionsListener.CloseAllConnections">
+            <summary>
+            Closes all active <see cref="T:L2.Net.GameService.OuterNetwork.UserConnection"/>s.
+            </summary>
+        </member>
+        <member name="P:L2.Net.GameService.OuterNetwork.UserConnectionsListener.Active">
+            <summary>
+            Gets or sets value, that indicates, if user connections listener is listening now.
+            </summary>
+        </member>
+        <member name="T:L2.Net.GameService.Service">
+            <summary>
+            Main service class.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.Service.Main">
+            <summary>
+            Main service start method.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.Service.CurrentDomain_UnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Executes when service throws unhandled exception.
+            </summary>
+            <param name="sender">Exception sender.</param>
+            <param name="e"><see cref="T:System.UnhandledExceptionEventArgs"/> object.</param>
+        </member>
+        <member name="M:L2.Net.GameService.Service.Terminate(L2.Net.Network.ServiceShutdownEventArgs)">
+            <summary>
+            Terminates current service instance.
+            </summary>
+            <param name="e">For more information, please see <see cref="T:L2.Net.Network.ServiceShutdownEventArgs"/> class.</param>
+        </member>
+        <member name="T:L2.Net.GameService.WorldPlane.GeoBlockType">
+            <summary>
+            Represents <see cref="T:L2.Net.GameService.WorldPlane.GeoBlock"/> types.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.WorldPlane.GeoBlockType.Flat">
+            <summary>
+            Flat <see cref="T:L2.Net.GameService.WorldPlane.GeoBlock"/> type.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.WorldPlane.GeoBlockType.Complex">
+            <summary>
+            Complex <see cref="T:L2.Net.GameService.WorldPlane.GeoBlock"/> type.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.WorldPlane.GeoBlockType.MultiLayered">
+            <summary>
+            Multi layered <see cref="T:L2.Net.GameService.WorldPlane.GeoBlock"/> type.
+            </summary>
+        </member>
+        <member name="T:L2.Net.GameService.WorldPlane.GeoBlock">
+            <summary>
+            Represents geodata block object.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.WorldPlane.GeoBlock.m_HeightsMap">
+            <summary>
+            Block heights map.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.WorldPlane.GeoBlock.m_HeightOffsets">
+            <summary>
+            Block height offsets.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.WorldPlane.GeoBlock.m_Heights">
+            <summary>
+            Height values.
+            </summary>
+        </member>
+        <member name="F:L2.Net.GameService.WorldPlane.GeoBlock.Type">
+            <summary>
+            Gets current <see cref="T:L2.Net.GameService.WorldPlane.GeoBlock"/> object <see cref="T:L2.Net.GameService.WorldPlane.GeoBlockType"/>.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.WorldPlane.GeoBlock.#ctor(System.Byte[],System.UInt16[],System.Int16[])">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.GameService.WorldPlane.GeoBlock"/> object.
+            </summary>
+            <param name="heightsMap">m_Heights map.</param>
+            <param name="heigthOffsets">Height offsets.</param>
+            <param name="heights">Height values.</param>
+        </member>
+        <member name="T:L2.Net.GameService.WorldPlane.Geodata">
+            <summary>
+            Geodata engine.
+            </summary>
+        </member>
+        <member name="M:L2.Net.GameService.WorldPlane.Geodata.Initialize">
+            <summary>
+            Initializes <see cref="T:L2.Net.GameService.WorldPlane.Geodata"/> engine.
+            </summary>
+            <returns>True, if <see cref="T:L2.Net.GameService.WorldPlane.Geodata"/> engine was initialized successfully, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.GameService.WorldPlane.Geodata.ParseMapOffsets(System.IO.FileInfo)">
+            <summary>
+            Parses map absolute offset for provided <see cref="T:System.IO.FileInfo"/> object ( for now file name must be X_Y.* ).
+            </summary>
+            <param name="fileInfo"><see cref="T:System.IO.FileInfo"/> for file to parse it's absolute offset.</param>
+            <returns>Parsed absolute map offset.</returns>
+        </member>
+    </members>
+</doc>

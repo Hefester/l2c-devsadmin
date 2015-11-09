@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" InitialTargets="L2NetBuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43416BBF-195F-4FF6-A0E9-193840406A13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L2.Net.Scripting</RootNamespace>
+    <AssemblyName>L2.Net.Scripting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <DocumentationFile>bin\Debug\L2.Net.Scripting.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.283.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.283.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.3.5\Assemblies\v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheService\MsSql\MsSqlDataBaseInstaller.cs" />
+    <Compile Include="CacheService\MySql\MySqlDatabaseInstaller.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CacheService\Assemblies.txt" />
+    <None Include="CacheService\MySql\Data\[dummy].sql" />
+    <None Include="CacheService\MySql\Stored Procedures\[Service_Audit].sql" />
+    <None Include="CacheService\MySql\Stored Procedures\[User_Audit].sql" />
+    <None Include="CacheService\MySql\Stored Procedures\[User_Auth].sql" />
+    <None Include="CacheService\MySql\Stored Procedures\[User_Create].sql" />
+    <None Include="CacheService\MySql\Stored Procedures\[User_Logout].sql" />
+    <None Include="CacheService\MySql\Stored Procedures\[Worlds_Cache].sql" />
+    <None Include="CacheService\MySql\Tables\[services_audit].sql" />
+    <None Include="CacheService\MySql\Tables\[users].sql" />
+    <None Include="CacheService\MySql\Tables\[users_audit].sql" />
+    <None Include="CacheService\MySql\Tables\[worlds].sql" />
+    <Content Include="GameService\Assemblies.txt" />
+    <Content Include="GameService\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\L2.Net.CacheService\L2.CacheService.csproj">
+      <Project>{1E0156D0-9870-442B-A132-8145FCAA2A9D}</Project>
+      <Name>L2.CacheService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\L2.Net.DataProvider\L2.DataProvider.csproj">
+      <Project>{33539048-06D8-43C2-87CF-3AD3F8999865}</Project>
+      <Name>L2.DataProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\L2.Net.GameService\L2.GameService.csproj">
+      <Project>{2BD9BB42-09F4-4FEA-8D04-9ADC1C78BBDF}</Project>
+      <Name>L2.GameService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\L2.Net.NpcService\L2.NpcService.csproj">
+      <Project>{20648FEE-C6DC-4DC6-8BFF-A2B9A5A55D2D}</Project>
+      <Name>L2.NpcService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\L2.Net\L2.csproj">
+      <Project>{A51D5791-5BA0-461B-8601-65394A75705B}</Project>
+      <Name>L2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CacheService\MsSql\Data\[dummy].sql" />
+    <None Include="CacheService\MsSql\Stored Procedures\[Service_Audit].sql" />
+    <None Include="CacheService\MsSql\Stored Procedures\[User_Audit].sql" />
+    <None Include="CacheService\MsSql\Stored Procedures\[User_Auth].sql" />
+    <None Include="CacheService\MsSql\Stored Procedures\[User_Create].sql" />
+    <None Include="CacheService\MsSql\Stored Procedures\[User_Logout].sql" />
+    <None Include="CacheService\MsSql\Stored Procedures\[Worlds_Cache].sql" />
+    <None Include="CacheService\MsSql\Tables\[services_audit].sql" />
+    <None Include="CacheService\MsSql\Tables\[users].sql" />
+    <None Include="CacheService\MsSql\Tables\[users_audit].sql" />
+    <None Include="CacheService\MsSql\Tables\[worlds].sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CacheService\MsSql\Updates\" />
+    <Folder Include="CacheService\MySql\Updates\" />
+    <Folder Include="GameService\Zones\" />
+    <Folder Include="NpcService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Target Name="L2NetBuild">
+    <ItemGroup>
+      <GameServiceData Include="GameService\**\*.*" Exclude="GameService\**\readme.txt" />
+      <NpcServiceData Include="NpcService\**\*.*" Exclude="NpcService\**\readme.txt" />
+      <CacheServiceData Include="CacheService\**\*.*" Exclude="CacheService\**\readme.txt" />
+    </ItemGroup>
+    <Message Text="Processing Game Service script files..." Condition="true" Importance="high" ContinueOnError="true" />
+    <Copy SourceFiles="@(GameServiceData)" DestinationFolder="..\L2.Net.GameService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Message Text="Processing Npc Service script files..." Condition="true" Importance="high" ContinueOnError="true" />
+    <Copy SourceFiles="@(NpcServiceData)" DestinationFolder="..\L2.Net.NpcService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Message Text="Processing Cache Service script files..." Condition="true" Importance="high" ContinueOnError="true" />
+    <Copy SourceFiles="@(CacheServiceData)" DestinationFolder="..\L2.Net.CacheService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Message Text="Done." Condition="true" Importance="high" ContinueOnError="true" />
+  </Target>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

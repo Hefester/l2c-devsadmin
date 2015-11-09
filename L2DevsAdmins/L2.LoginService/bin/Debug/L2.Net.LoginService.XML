@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>L2.Net.LoginService</name>
+    </assembly>
+    <members>
+        <member name="T:L2.Net.LoginService.InnerNetwork.CacheServiceConnection">
+            <summary>
+            Provides connection between cache service and login service.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.AutoReconnectToRemoteService">
+            <summary>
+            Indicates, if currently connected service has to reconnect to remote service automatically, when connection was lost.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.Connection">
+            <summary>
+            Cache server connection object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.UnsafeInitialize">
+            <summary>
+            Initializes service in unsafe mode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.Initialize(System.Net.IPEndPoint,System.TimeSpan)">
+            <summary>
+            Initializes 'cache to login' connection.
+            </summary>
+            <param name="remoteEP">Remote cache service endpoint.</param>
+            <param name="reconnectAttemptInterval">Interval between reconnection attempts.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.Connection_OnDisconnected(System.Int32,L2.Net.Network.NetworkClient,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been aborted.
+            </summary>
+            <param name="errorCode">Error code.</param>
+            <param name="client"><see cref="T:L2.Net.Network.NetworkClient"/> object.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.Connection_OnConnected(System.Net.IPEndPoint,System.Byte)">
+            <summary>
+            Executes when connection to remote host has been established.
+            </summary>
+            <param name="endPoint">Remote <see cref="T:System.Net.IPEndPoint"/>.</param>
+            <param name="connectionId">Connection id.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.Send(L2.Net.Packet)">
+            <summary>
+            Sends <see cref="T:L2.Net.Packet"/> to cache service.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="P:L2.Net.LoginService.InnerNetwork.CacheServiceConnection.Active">
+            <summary>
+            Indicates if logins service is connected to cache service.
+            </summary>
+        </member>
+        <member name="T:L2.Net.LoginService.InnerNetwork.CacheServiceRequestsHandlers">
+            <summary>
+            Handles cache service requests.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.CacheServiceRequestsHandlers.Handle(L2.Net.Packet)">
+            <summary>
+            Handles incoming packet.
+            </summary>
+            <param name="p">Received <see cref="T:L2.Net.Packet"/> object.</param>
+        </member>
+        <member name="T:L2.Net.LoginService.InnerNetwork.QueuedRequest">
+            <summary>
+            Queued inner network request structure.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.InnerNetwork.QueuedRequest.NotFound">
+            <summary>
+            Request not found identifier.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.InnerNetwork.QueuedRequest.RequestID">
+            <summary>
+            Queued request id.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.InnerNetwork.QueuedRequest.UserConnection">
+            <summary>
+            <see cref="F:L2.Net.LoginService.InnerNetwork.QueuedRequest.UserConnection"/> object.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequest.#ctor(System.Int64,L2.Net.LoginService.OuterNetwork.UserConnection)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/>.
+            </summary>
+            <param name="requestID"><see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> unique id.</param>
+            <param name="connection"><see cref="F:L2.Net.LoginService.InnerNetwork.QueuedRequest.UserConnection"/> object.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequest.op_Equality(L2.Net.LoginService.InnerNetwork.QueuedRequest,L2.Net.LoginService.InnerNetwork.QueuedRequest)">
+            <summary>
+            Determines two <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> objects equality.
+            </summary>
+            <param name="one">First <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> object.</param>
+            <param name="other">Second <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> object.</param>
+            <returns>True, if first <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> equals to second, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequest.op_Inequality(L2.Net.LoginService.InnerNetwork.QueuedRequest,L2.Net.LoginService.InnerNetwork.QueuedRequest)">
+            <summary>
+            Determines two <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> inequality.
+            </summary>
+            <param name="one">First <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> object.</param>
+            <param name="other">Second <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> object.</param>
+            <returns>True, if first <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> object doesn'thread equal to second, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequest.IsValid(L2.Net.LoginService.InnerNetwork.QueuedRequest)">
+            <summary>
+            Validates provided <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/>.
+            </summary>
+            <param name="request"><see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> to validate.</param>
+            <returns>True, if provided <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> is valid, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequest.Send(L2.Net.Packet)">
+            <summary>
+            Sends provided <see cref="T:L2.Net.Packet"/> to requester.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequest.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/>.
+            </summary>
+            <param name="obj"> An object to compare with this instance.</param>
+            <returns>True if obj is an instance of <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> and equals the value of this instance, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequest.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.InnerNetwork.QueuedRequestsPool">
+            <summary>
+            <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/>s collection.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequestsPool.Enqueue(L2.Net.LoginService.OuterNetwork.UserConnection,System.Int64@)">
+            <summary>
+            Enqueues new <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> to requests pool.
+            </summary>
+            <param name="userConnection"><see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> object to create request for.</param>
+            <param name="requestId">Request unique id reference.</param>
+            <returns>True, if request was added, otherwise  false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequestsPool.HasRequest(L2.Net.LoginService.OuterNetwork.UserConnection,System.Boolean)">
+            <summary>
+            Indicates if <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequestsPool"/> contains request from provided <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> object.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> to search requests from.</param>
+            <param name="dropIfExists">If true, existing request will be dropped.</param>
+            <returns>True, if there is <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> from from provided <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/>, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequestsPool.Dequeue(System.Int32)">
+            <summary>
+            Dequeues <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> from requests pool.
+            </summary>
+            <param name="sessionID">Connection session unique id.</param>
+            <returns><see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> if it was found in pool, otherwise QueuedRequest.NotFound instance.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequestsPool.Dequeue(System.Int64)">
+            <summary>
+            Dequeues <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> from requests pool.
+            </summary>
+            <param name="requestId"><see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> unique id.</param>
+            <returns><see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/> if it was found in pool, otherwise <see cref="F:L2.Net.LoginService.InnerNetwork.QueuedRequest.NotFound"/>.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.InnerNetwork.QueuedRequestsPool.NextRequestID">
+            <summary>
+            Gets next unique id for <see cref="T:L2.Net.LoginService.InnerNetwork.QueuedRequest"/>.
+            </summary>
+            <returns>Next request unique id.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.AccountKeckedReason">
+            <summary>
+            Account kicked reason.
+            </summary>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.AccountKicked">
+            <summary>
+            Account kicked packet.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.AccountKicked.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.AccountKicked.ToPacket(L2.Net.LoginService.OuterNetwork.AccountKeckedReason)">
+            <summary>
+            Returns account kicked packet.
+            </summary>
+            <param name="reason">Account kicked reason.</param>
+            <returns>Account kicked <see cref="T:L2.Net.Packet"/>.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.LoginFailed">
+            <summary>
+            Login failed packet.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.LoginFailed.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.LoginFailed.ToPacket(L2.Net.Structs.Services.UserAuthenticationResponseType)">
+            <summary>
+            Login failed server > client packet.
+            </summary>
+            <param name="response">Login failed reason.</param>
+            <returns>Login failed <see cref="T:L2.Net.Packet"/>.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.LoginOk">
+            <summary>
+            Login accepted packet.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.LoginOk.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.LoginOk.ToPacket(L2.Net.UserSession)">
+            <summary>
+            Login accepted server > client packet.
+            </summary>
+            <param name="session"><see cref="T:L2.Net.UserSession"/> object.</param>
+            <returns>Login accepted <see cref="T:L2.Net.Packet"/>.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.PlayAccepted">
+            <summary>
+            Play accepted packet.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.PlayAccepted.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.PlayAccepted.ToPacket(L2.Net.UserSession)">
+            <summary>
+            Returns play accepted server > client packet.
+            </summary>
+            <param name="session"><see cref="T:L2.Net.UserSession"/> object.</param>
+            <returns>Play accepted <see cref="T:L2.Net.Packet"/>.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.PlayFail">
+            <summary>
+            Play failed packet.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.PlayFail.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.PlayFail.ToPacket(L2.Net.Structs.Services.JoinWorldRequestResult)">
+            <summary>
+            Play failed server > client packet.
+            </summary>
+            <param name="reason">Play failed reason.</param>
+            <returns>Play failed <see cref="T:L2.Net.Packet"/>.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.InitializeConnection">
+            <summary>
+            Initialize connection packet.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.InitializeConnection.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.InitializeConnection.ToPacket(L2.Net.UserSession)">
+            <summary>
+            Returns connection initialization server > client <see cref="T:L2.Net.Packet"/>.
+            </summary>
+            <param name="session"><see cref="T:L2.Net.UserSession"/> object.</param>
+            <returns>Connection initialization <see cref="T:L2.Net.Packet"/>.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.ResponseAuthGameGuard">
+            <summary>
+            Game guard auth response.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.ResponseAuthGameGuard.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.ResponseAuthGameGuard.Static">
+            <summary>
+            Static packet implementation.
+            </summary>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.ServerList">
+            <summary>
+            Worlds list packet.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.ServerList.Opcode">
+            <summary>
+            Packet opcode.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.ServerList.ToPacket(System.Byte,L2.Net.Structs.Services.WorldSummary[])">
+            <summary>
+            Worlds data server > client packet.
+            </summary>
+            <param name="lastWorld">Last world user was played in.</param>
+            <param name="summary">Worlds summary.</param>
+            <returns>Worlds summary <see cref="T:L2.Net.Packet"/></returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.UserConnection">
+            <summary>
+            Represents user connection class.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnection.Session">
+            <summary>
+            Provides access to user session data.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnection.m_Crypt">
+            <summary>
+            Crypt object.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnection.m_RSADecryptor">
+            <summary>
+            RSA object.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnection.Login">
+            <summary>
+            User login.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnection.Password">
+            <summary>
+            User password.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnection.#ctor(System.Net.Sockets.Socket)">
+            <summary>
+            Initializes new instance of <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> class.
+            </summary>
+            <param name="socket">Connection <see cref="T:System.Net.Sockets.Socket"/>.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnection.BeginReceive">
+            <summary>
+            Begins receiving data from client.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnection.Handle(L2.Net.Packet)">
+            <summary>
+            Handles incoming packet.
+            </summary>
+            <param name="packet">Incoming packet.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnection.ReceiveData(System.Byte[],System.Int32)">
+            <summary>
+            Not needed here.
+            </summary>
+            <param name="buffer">Received buffer.</param>
+            <param name="length">Received buffer length.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnection.Send(L2.Net.Packet)">
+            <summary>
+            Sends packet to client.
+            </summary>
+            <param name="p"><see cref="T:L2.Net.Packet"/> to send.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnection.ReceiveCallback(System.IAsyncResult)">
+            <summary>
+            Receive method.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnection.InitializeSession(System.String)">
+            <summary>
+            Initializes new <see cref="T:L2.Net.UserSession"/> object.
+            </summary>
+            <returns>New <see cref="T:L2.Net.UserSession"/> object.</returns>
+        </member>
+        <member name="T:L2.Net.LoginService.OuterNetwork.UserConnectionsListener">
+            <summary>
+            Incoming user connections listener.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.m_ActiveConnections">
+            <summary>
+            Active <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> objects collection.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.m_ListenerService">
+            <summary>
+            Incoming connections <see cref="T:L2.Net.Network.Listener"/>.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.m_ListenerThread">
+            <summary>
+            <see cref="T:L2.Net.Network.Listener"/> <see cref="T:System.Threading.Thread"/>
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.m_Active">
+            <summary>
+            Indicates if <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnectionsListener"/> is active.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.m_LocalEndPoint">
+            <summary>
+            Local <see cref="T:System.Net.IPEndPoint"/>.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.m_Backlog">
+            <summary>
+            Local listener backlog.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.m_EnableFirewall">
+            <summary>
+            Indicates if <see cref="T:L2.Net.Network.Firewall"/> must be enabled.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.Initialize(System.Net.IPEndPoint,System.Int32,System.Boolean)">
+            <summary>
+            Initializes user connections listener.
+            </summary>
+            <param name="localEndPoint">Local ip endpoint.</param>
+            <param name="backlog">Backlog.</param>
+            <param name="enableFirewall">True, if firewall must be enabled, otherwise false.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.Disable">
+            <summary>
+            Disables network listener and stops listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.Enable">
+            <summary>
+            Enables network listener and starts listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.InitializeListener">
+            <summary>
+            Initializes listener.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.StartListenerThread">
+            <summary>
+            Tries to start listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.ListenerService_OnConnectionAccepted(System.Net.Sockets.Socket)">
+            <summary>
+            Executes after listener accepted new connection.
+            </summary>
+            <param name="socket">New connection socket.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.ListenerService_OnTerminated">
+            <summary>
+            Executes after listener was terminated.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.ListenerService_OnStopped">
+            <summary>
+            Executes after listener was stopped.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.ListenerService_OnStarted">
+            <summary>
+            Executes after listener was started.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.StopListener">
+            <summary>
+            Stops listener.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.StopListenerThread">
+            <summary>
+            Stops listener thread.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.RemoveFromActiveConnections(L2.Net.LoginService.OuterNetwork.UserConnection)">
+            <summary>
+            Removes provided <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> object from active connections list.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> object to remove from active connections list.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.CloseConnectionWithoutLogout(L2.Net.LoginService.OuterNetwork.UserConnection)">
+             <summary>
+            Closes active <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> but not requests cache to drop user session ( when going to world ).
+             </summary>
+             <param name="connection"><see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> object to remove from active connections list.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.CloseActiveConnection(L2.Net.LoginService.OuterNetwork.UserConnection)">
+            <summary>
+            Closes active <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/>.
+            </summary>
+            <param name="connection"><see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/> object, which network must be closed.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.CloseAllConnections">
+            <summary>
+            Closes all active <see cref="T:L2.Net.LoginService.OuterNetwork.UserConnection"/>s.
+            </summary>
+        </member>
+        <member name="P:L2.Net.LoginService.OuterNetwork.UserConnectionsListener.Active">
+            <summary>
+            Gets or sets value, that indicates, if user connections listener is listening now.
+            </summary>
+        </member>
+        <member name="T:L2.Net.LoginService.Service">
+            <summary>
+            Main service class.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Service.Main">
+            <summary>
+            Main service start method.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Service.CurrentDomain_UnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Executes when service throws unhandled exception.
+            </summary>
+            <param name="sender">Exception sender.</param>
+            <param name="e"><see cref="T:System.UnhandledExceptionEventArgs"/> object.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.Service.Terminate(L2.Net.Network.ServiceShutdownEventArgs)">
+            <summary>
+            Terminates current service instance.
+            </summary>
+            <param name="e">For more information, please see <see cref="T:L2.Net.Network.ServiceShutdownEventArgs"/> class.</param>
+        </member>
+        <member name="T:L2.Net.LoginService.Utils">
+            <summary>
+            Login service utilities.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Utils.CSP">
+            <summary>
+            MD5 crypto service provider.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Utils.HashPassword(System.String)">
+            <summary>
+            <para>Returns password hash.</para>
+            <para>Hash compute times count is defined is server settings as PasswordProtectionLevel.</para>
+            </summary>
+            <param name="password">Plain text password.</param>
+        </member>
+        <member name="F:L2.Net.LoginService.Utils.UserLoginRegex">
+            <summary>
+            User login regular expression.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Utils.IsValidUserLogin(System.String)">
+            <summary>
+            Validates user login.
+            </summary>
+            <param name="login">User login to validate.</param>
+            <returns>True, if user login matches logins regex, otherwise false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.NewCrypt.EncXORPass(System.Byte[],System.Int32)">
+            Packet is first XOR encoded with <code>key</code>
+            Then, the last 4 bytes are overwritten with the the XOR "key".
+            Thus this assume that there is enough room for the key to fit without overwriting data.
+            @param raw The raw bytes to be encrypted
+            @param key The 4 bytes (int) XOR key
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.NewCrypt.EncXORPass(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            Packet is first XOR encoded with <code>key</code>
+            Then, the last 4 bytes are overwritten with the the XOR "key".
+            Thus this assume that there is enough room for the key to fit without overwriting data.
+            @param raw The raw bytes to be encrypted
+            @param offset The begining of the data to be encrypted
+            @param capacity Length of the data to be encrypted
+            @param key The 4 bytes (int) XOR key
+        </member>
+        <member name="T:L2.Net.LoginService.Crypt.BigInteger">
+            <summary>
+            Very Big Integer
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.BigInteger.length">
+            <summary>
+            The Length of this BigInteger
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.BigInteger.data">
+            <summary>
+            The data for this BigInteger
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.BigInteger.DEFAULT_LEN">
+            <summary>
+            Default capacity of a BigInteger in bytes
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.BigInteger.smallPrimes">
+            <summary>
+                   Table of primes below 2000.
+            </summary>
+            <remarks>
+                   <para>
+                   This table was generated using Mathematica 4.1 using the following function:
+                   </para>
+                   <para>
+                       <code>
+                       PrimeTable [x_] := Prime [Range [1, PrimePi [x]]]
+                       PrimeTable [6000]
+                       </code>
+                   </para>
+            </remarks>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor">
+            <summary>
+            Create new instance of BigInteger
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor(L2.Net.LoginService.Crypt.BigInteger.Sign,System.UInt32)">
+            <summary>
+            Create new instance of BihInteger
+            </summary>
+            <param name="sign">Sign</param>
+            <param name="len">Lenght</param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor(L2.Net.LoginService.Crypt.BigInteger)">
+            <summary>
+            Create new instance of BihInteger
+            </summary>
+            <param name="bi"></param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor(L2.Net.LoginService.Crypt.BigInteger,System.UInt32)">
+            <summary>
+            Create new instance of BihInteger
+            </summary>
+            <param name="bi"></param>
+            <param name="len"></param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor(System.Byte[])">
+            <summary>
+            Create new instance of BihInteger
+            </summary>
+            <param name="inData"></param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor(System.UInt32[])">
+            <summary>
+            Create new instance of BihInteger
+            </summary>
+            <param name="inData"></param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor(System.UInt32)">
+            <summary>
+            Create new instance of BihInteger
+            </summary>
+            <param name="ui"></param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.#ctor(System.UInt64)">
+            <summary>
+            Create new instance of BihInteger
+            </summary>
+            <param name="ul"></param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.op_Implicit(System.UInt32)~L2.Net.LoginService.Crypt.BigInteger">
+            <summary>
+            Operator overriding
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.GenerateRandom(System.Int32,System.Security.Cryptography.RandomNumberGenerator)">
+            <summary>
+            Generates a new, random BigInteger of the specified capacity.
+            </summary>
+            <param name="bits">The number of bits for the new number.</param>
+            <param name="rng">A random number generator to use to obtain the bits.</param>
+            <returns>A random number of the specified capacity.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.GenerateRandom(System.Int32)">
+            <summary>
+            Generates a new, random BigInteger of the specified capacity using the default RNG crypto service provider.
+            </summary>
+            <param name="bits">The number of bits for the new number.</param>
+            <returns>A random number of the specified capacity.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Randomize(System.Security.Cryptography.RandomNumberGenerator)">
+            <summary>
+            Randomizes the bits in "this" from the specified RNG.
+            </summary>
+            <param name="rng">A RNG.</param>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Randomize">
+            <summary>
+            Randomizes the bits in "this" from the default RNG.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.TestBit(System.UInt32)">
+            <summary>
+            Tests if the specified bit is 1.
+            </summary>
+            <param name="bitNum">The bit to test. The least significant bit is 0.</param>
+            <returns>True if bitNum is set to 1, else false.</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Normalize">
+            <summary>
+                Normalizes this by setting the capacity to the actual number of
+                uints used in data and by setting the sign to Sign.Zero if the
+                value of this is 0.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.NextHighestPrime(L2.Net.LoginService.Crypt.BigInteger)">
+            <summary>
+            Generates the smallest prime >= bi
+            </summary>
+            <param name="bi">A BigInteger</param>
+            <returns>The smallest prime >= bi. More mathematically, if bi is prime: bi, else Prime [PrimePi [bi] + 1].</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Incr2">
+            <summary>
+            Increments this by two
+            </summary>
+        </member>
+        <member name="T:L2.Net.LoginService.Crypt.BigInteger.Kernel">
+            <summary>
+            Low level functions for the BigInteger
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Kernel.AddSameSign(L2.Net.LoginService.Crypt.BigInteger,L2.Net.LoginService.Crypt.BigInteger)">
+            <summary>
+            Adds two numbers with the same sign.
+            </summary>
+            <param name="bi1">A BigInteger</param>
+            <param name="bi2">A BigInteger</param>
+            <returns>bi1 + bi2</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Kernel.Compare(L2.Net.LoginService.Crypt.BigInteger,L2.Net.LoginService.Crypt.BigInteger)">
+            <summary>
+            Compares two BigInteger
+            </summary>
+            <param name="bi1">A BigInteger</param>
+            <param name="bi2">A BigInteger</param>
+            <returns>The sign of bi1 - bi2</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Kernel.SingleByteDivideInPlace(L2.Net.LoginService.Crypt.BigInteger,System.UInt32)">
+            <summary>
+            Performs n / i and n % i in one operation.
+            </summary>
+            <param name="n">A BigInteger, upon exit this will hold n / i</param>
+            <param name="i">The divisor</param>
+            <returns>n % i</returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Kernel.Multiply(System.UInt32[],System.UInt32,System.UInt32,System.UInt32[],System.UInt32,System.UInt32,System.UInt32[],System.UInt32)">
+            <summary>
+            Multiplies the data in x [xOffset:xOffset+xLen] by
+            y [yOffset:yOffset+yLen] and puts it into
+            i [dOffset:dOffset+xLen+yLen].
+            </summary>
+            <remarks>
+            This code is unsafe! It is the caller's responsibility to make
+            sure that it is safe to access x [xOffset:xOffset+xLen],
+            y [yOffset:yOffset+yLen], and i [dOffset:dOffset+xLen+yLen].
+            </remarks>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BigInteger.Kernel.MultiplyMod2p32pmod(System.UInt32[],System.Int32,System.Int32,System.UInt32[],System.Int32,System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+            Multiplies the data in x [xOffset:xOffset+xLen] by
+            y [yOffset:yOffset+yLen] and puts the low mod words into
+            i [dOffset:dOffset+mod].
+            </summary>
+            <remarks>
+            This code is unsafe! It is the caller's responsibility to make
+            sure that it is safe to access x [xOffset:xOffset+xLen],
+            y [yOffset:yOffset+yLen], and i [dOffset:dOffset+mod].
+            </remarks>
+        </member>
+        <member name="T:L2.Net.LoginService.Crypt.ConfidenceFactor">
+            <summary>
+            A factor of confidence.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.ConfidenceFactor.ExtraLow">
+            <summary>
+            Only suitable for development use, probability of failure may be greater than 1/2^20.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.ConfidenceFactor.Low">
+            <summary>
+            Suitable only for transactions which do not require forward secrecy.  Probability of failure about 1/2^40
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.ConfidenceFactor.Medium">
+            <summary>
+            Designed for production use. Probability of failure about 1/2^80.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.ConfidenceFactor.High">
+            <summary>
+            Suitable for sensitive data. Probability of failure about 1/2^160.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.ConfidenceFactor.ExtraHigh">
+            <summary>
+            Use only if you have lots of time! Probability of failure about 1/2^320.
+            </summary>
+        </member>
+        <member name="F:L2.Net.LoginService.Crypt.ConfidenceFactor.Provable">
+            <summary>
+            Only use methods which generate provable primes. Not yet implemented.
+            </summary>
+        </member>
+        <member name="T:L2.Net.LoginService.Crypt.NextPrimeFinder">
+            <summary>
+            Finds the next prime after a given number.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.PrimalityTests.RabinMillerTest(L2.Net.LoginService.Crypt.BigInteger,L2.Net.LoginService.Crypt.ConfidenceFactor)">
+            <summary>
+                Probabilistic prime test based on Rabin-Miller's test
+            </summary>
+            <param name="bi" type="BigInteger.BigInteger">
+                <para>
+                    The number to test.
+                </para>
+            </param>
+            <param name="confidence" type="int">
+                <para>
+               The number of chosen bases. The test has at least a
+               1/4^confidence chance of falsely returning True.
+                </para>
+            </param>
+            <returns>
+               <para>
+                   True if "this" is a strong pseudoprime to randomly chosen bases.
+               </para>
+               <para>
+                   False if "this" is definitely NOT prime.
+               </para>
+            </returns>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.PrimeGeneratorBase.PostTrialDivisionTests(L2.Net.LoginService.Crypt.BigInteger)">
+            <summary>
+            Performs primality tests on bi, assumes trial division has been done.
+            </summary>
+            <param name="bi">A BigInteger that has been subjected to and passed trial division</param>
+            <returns>False if bi is composite, true if it may be prime.</returns>
+            <remarks>The speed of this method is dependent on Confidence</remarks>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BlowfishEngine.init(System.Boolean,System.Byte[])">
+             <summary> initialise a Blowfish cipher.
+            
+             </summary>
+             <param name="">encryption
+             whether or not we are for encryption.
+             </param>
+             <param name="">key
+             the key used to set up the cipher.
+             </param>
+             <exception cref="!:IllegalArgumentException"> 
+             if the params argument is inappropriate.
+            
+             </exception>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BlowfishEngine.ProcessTable(System.UInt32,System.UInt32,System.UInt32[])">
+            <summary> apply the encryption cycle to each value pair in the table.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BlowfishEngine.EncryptBlock(System.Byte[],System.Int32,System.Byte[],System.Int32)">
+            <summary> Encrypt the given input starting at the given offset and place the
+            result in the provided buffer starting at the given offset. The input
+            will be an exact multiple of our blocksize.
+            </summary>
+        </member>
+        <member name="M:L2.Net.LoginService.Crypt.BlowfishEngine.DecryptBlock(System.Byte[],System.Int32,System.Byte[],System.Int32)">
+            <summary> Decrypt the given input starting at the given offset and place the
+            result in the provided buffer starting at the given offset. The input
+            will be an exact multiple of our blocksize.
+            </summary>
+        </member>
+    </members>
+</doc>

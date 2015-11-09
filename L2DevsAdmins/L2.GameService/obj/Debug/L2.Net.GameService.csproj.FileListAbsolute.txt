@@ -1,0 +1,10 @@
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\bin\Debug\L2.Net.GameService.exe.config
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\bin\Debug\L2.Net.GameService.XML
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\bin\Debug\L2.Net.GameService.exe
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\bin\Debug\L2.Net.GameService.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\bin\Debug\L2.Net.dll
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\bin\Debug\L2.Net.pdb
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\bin\Debug\L2.Net.xml
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\obj\Debug\L2.Net.GameService.csprojResolveAssemblyReference.cache
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\obj\Debug\L2.Net.GameService.exe
+C:\Users\AlexVega\Documents\Visual Studio 2015\Projects\L2.Net-master\L2.Net.GameService\obj\Debug\L2.Net.GameService.pdb

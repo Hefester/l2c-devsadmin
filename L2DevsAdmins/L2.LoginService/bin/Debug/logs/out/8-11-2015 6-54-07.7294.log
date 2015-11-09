@@ -1,0 +1,16 @@
+8/11/2015 6:54:07.7460 > [Logger] Initialized.
+8/11/2015 6:54:10.9619 > [InnerNetwork] Initializing cache service connection.
+8/11/2015 6:54:10.9677 > [InnerNetwork] Connecting to 127.0.0.1:3001...
+8/11/2015 6:54:10.9697 > [OuterNetwork] User connections listener initialized on 127.0.0.1:2106
+8/11/2015 6:54:12.0800 > No connection could be made because the target machine actively refused it 127.0.0.1:3001
+8/11/2015 6:54:22.1025 > [InnerNetwork] Connecting to 127.0.0.1:3001...
+8/11/2015 6:54:23.1787 > No connection could be made because the target machine actively refused it 127.0.0.1:3001
+8/11/2015 6:54:33.1826 > [InnerNetwork] Connecting to 127.0.0.1:3001...
+8/11/2015 6:54:33.2119 > [InnerNetwork] Authorizing on CacheService on 127.0.0.1:3001
+8/11/2015 6:54:33.3144 > [InnerNetwork] Authorized on CacheService (0x00)
+8/11/2015 6:54:33.3798 > [InnerNetwork] Cache service accepted service settings.
+8/11/2015 6:54:58.7255 > [InnerNetwork] Disconnected from cache service.
+8/11/2015 6:54:58.7451 > [InnerNetwork] Connection to remote side was lost, attempting to reconnect...
+8/11/2015 6:54:58.7617 > [InnerNetwork] Initializing cache service connection.
+8/11/2015 6:54:58.8330 > [InnerNetwork] Connecting to 127.0.0.1:3001...
+8/11/2015 6:54:59.8798 > No connection could be made because the target machine actively refused it 127.0.0.1:3001
