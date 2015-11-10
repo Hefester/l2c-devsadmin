@@ -8,8 +8,8 @@
     <ProjectGuid>{93B4474D-3DFA-4330-9882-4E032045547A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>L2.Net.LoginService</RootNamespace>
-    <AssemblyName>L2.Net.LoginService</AssemblyName>
+    <RootNamespace>L2.LoginService</RootNamespace>
+    <AssemblyName>L2.LoginService</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -36,7 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Debug\L2.Net.LoginService.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\L2.LoginService.XML</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -91,7 +91,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\L2.Net\L2.csproj">
+    <ProjectReference Include="..\L2\L2.csproj">
       <Project>{A51D5791-5BA0-461B-8601-65394A75705B}</Project>
       <Name>L2</Name>
     </ProjectReference>

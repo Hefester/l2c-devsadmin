@@ -8,8 +8,8 @@
     <ProjectGuid>{20648FEE-C6DC-4DC6-8BFF-A2B9A5A55D2D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>L2.Net.NpcService</RootNamespace>
-    <AssemblyName>L2.Net.NpcService</AssemblyName>
+    <RootNamespace>L2.NpcService</RootNamespace>
+    <AssemblyName>L2.NpcService</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -36,7 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Debug\L2.Net.NpcService.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\L2.NpcService.XML</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -77,7 +77,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\L2.Net\L2.csproj">
+    <ProjectReference Include="..\L2\L2.csproj">
       <Project>{A51D5791-5BA0-461B-8601-65394A75705B}</Project>
       <Name>L2</Name>
     </ProjectReference>

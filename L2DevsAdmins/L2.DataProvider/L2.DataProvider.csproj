@@ -8,8 +8,8 @@
     <ProjectGuid>{33539048-06D8-43C2-87CF-3AD3F8999865}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>L2.Net.DataProvider</RootNamespace>
-    <AssemblyName>L2.Net.DataProvider</AssemblyName>
+    <RootNamespace>L2.DataProvider</RootNamespace>
+    <AssemblyName>L2.DataProvider</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -34,7 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\L2.Net.DataProvider.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\L2.DataProvider.XML</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -76,7 +76,7 @@
     <Compile Include="TypesConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\L2.Net\L2.csproj">
+    <ProjectReference Include="..\L2\L2.csproj">
       <Project>{A51D5791-5BA0-461B-8601-65394A75705B}</Project>
       <Name>L2</Name>
     </ProjectReference>

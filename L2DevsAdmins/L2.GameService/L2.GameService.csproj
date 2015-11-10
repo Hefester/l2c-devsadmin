@@ -8,8 +8,8 @@
     <ProjectGuid>{2BD9BB42-09F4-4FEA-8D04-9ADC1C78BBDF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>L2.Net.GameService</RootNamespace>
-    <AssemblyName>L2.Net.GameService</AssemblyName>
+    <RootNamespace>L2.GameService</RootNamespace>
+    <AssemblyName>L2.GameService</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -51,7 +51,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>bin\Debug\L2.Net.GameService.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\L2.GameService.XML</DocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -96,7 +96,7 @@
     <Compile Include="WorldPlane\RegionsGrid.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\L2.Net\L2.csproj">
+    <ProjectReference Include="..\L2\L2.csproj">
       <Project>{A51D5791-5BA0-461B-8601-65394A75705B}</Project>
       <Name>L2</Name>
     </ProjectReference>
