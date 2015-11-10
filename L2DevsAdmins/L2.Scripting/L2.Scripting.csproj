@@ -8,8 +8,8 @@
     <ProjectGuid>{43416BBF-195F-4FF6-A0E9-193840406A13}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>L2.Net.Scripting</RootNamespace>
-    <AssemblyName>L2.Net.Scripting</AssemblyName>
+    <RootNamespace>L2.Scripting</RootNamespace>
+    <AssemblyName>L2.Scripting</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -35,7 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
-    <DocumentationFile>bin\Debug\L2.Net.Scripting.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\L2.Scripting.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -83,23 +83,23 @@
     <Content Include="GameService\readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\L2.Net.CacheService\L2.CacheService.csproj">
+    <ProjectReference Include="..\L2.CacheService\L2.CacheService.csproj">
       <Project>{1E0156D0-9870-442B-A132-8145FCAA2A9D}</Project>
       <Name>L2.CacheService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\L2.Net.DataProvider\L2.DataProvider.csproj">
+    <ProjectReference Include="..\L2.DataProvider\L2.DataProvider.csproj">
       <Project>{33539048-06D8-43C2-87CF-3AD3F8999865}</Project>
       <Name>L2.DataProvider</Name>
     </ProjectReference>
-    <ProjectReference Include="..\L2.Net.GameService\L2.GameService.csproj">
+    <ProjectReference Include="..\L2.GameService\L2.GameService.csproj">
       <Project>{2BD9BB42-09F4-4FEA-8D04-9ADC1C78BBDF}</Project>
       <Name>L2.GameService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\L2.Net.NpcService\L2.NpcService.csproj">
+    <ProjectReference Include="..\L2.NpcService\L2.NpcService.csproj">
       <Project>{20648FEE-C6DC-4DC6-8BFF-A2B9A5A55D2D}</Project>
       <Name>L2.NpcService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\L2.Net\L2.csproj">
+    <ProjectReference Include="..\L2\L2.csproj">
       <Project>{A51D5791-5BA0-461B-8601-65394A75705B}</Project>
       <Name>L2</Name>
     </ProjectReference>
@@ -133,11 +133,11 @@
       <CacheServiceData Include="CacheService\**\*.*" Exclude="CacheService\**\readme.txt" />
     </ItemGroup>
     <Message Text="Processing Game Service script files..." Condition="true" Importance="high" ContinueOnError="true" />
-    <Copy SourceFiles="@(GameServiceData)" DestinationFolder="..\L2.Net.GameService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(GameServiceData)" DestinationFolder="..\L2.GameService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
     <Message Text="Processing Npc Service script files..." Condition="true" Importance="high" ContinueOnError="true" />
-    <Copy SourceFiles="@(NpcServiceData)" DestinationFolder="..\L2.Net.NpcService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(NpcServiceData)" DestinationFolder="..\L2.NpcService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
     <Message Text="Processing Cache Service script files..." Condition="true" Importance="high" ContinueOnError="true" />
-    <Copy SourceFiles="@(CacheServiceData)" DestinationFolder="..\L2.Net.CacheService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(CacheServiceData)" DestinationFolder="..\L2.CacheService\bin\$(Configuration)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
     <Message Text="Done." Condition="true" Importance="high" ContinueOnError="true" />
   </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
