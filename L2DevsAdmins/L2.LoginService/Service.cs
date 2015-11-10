@@ -7,6 +7,7 @@ using L2.Net.Network;
 
 namespace L2.Net.LoginService
 {
+
     /// <summary>
     /// Main service class.
     /// </summary>

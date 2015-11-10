@@ -17,7 +17,7 @@ namespace L2.Net.GameService
         //Cargar configuraciones y objetos.
         internal static void load()
         {
-
+            Config.load();
         }
 
         /// <summary>
@@ -33,10 +33,10 @@ namespace L2.Net.GameService
                 (
                     new IPEndPoint
                         (
-                            IPAddress.Parse(Settings.Default.GameServiceAddress),
-                            Settings.Default.GameServicePort
+                            IPAddress.Parse(Config.GAME_IP_ADDRESS),
+                            Config.GAME_PORT
                         ),
-                    Settings.Default.GameServiceEnableFirewall
+                    Config.GAME_ENABLED_FIREWALL
                     );
 
             CacheServiceConnection.Initialize
@@ -45,18 +45,18 @@ namespace L2.Net.GameService
                         (
                             IPAddress.Parse
                             (
-                                Settings.Default.CacheServiceAddress),
-                                Settings.Default.CacheServicePort
+                                Config.CACHE_IP_ADDRESS),
+                                Config.CACHE_PORT
                             ),
-                    Settings.Default.CacheServiceReconnectInterval
+                        Config.CACHE_RECONNECT_INTERVAL
                         );
 
             UserConnectionsListener.Initialize
                 (
                     new IPEndPoint
                         (
-                            IPAddress.Parse(Settings.Default.WorldAddress),
-                            Settings.Default.WorldPort
+                            IPAddress.Parse(Config.WORLD_IP_ADDRESS),
+                            Config.WORLD_PORT
                         ),
                         1000, false // to settings
                 );

@@ -8,8 +8,8 @@
     <ProjectGuid>{A51D5791-5BA0-461B-8601-65394A75705B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>L2.Net</RootNamespace>
-    <AssemblyName>L2.Net</AssemblyName>
+    <RootNamespace>L2</RootNamespace>
+    <AssemblyName>L2</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Debug\L2.Net.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\L2.xml</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
     <Compile Include="Geometry\IMapUnit.cs" />
     <Compile Include="INamed.cs" />
     <Compile Include="Geometry\IPoint3D.cs" />

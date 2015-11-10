@@ -5,43 +5,55 @@ using System.IO;
 
 namespace L2.Net
 {
+    /// <summary>
+    /// A Basic properties, based on Java.
+    /// </summary>
     public class Properties
     {
-        public static Dictionary<string, string> GetProperties(string path)
-        {
-            string fileData = "";
-            using (StreamReader sr = new StreamReader(path))
-            {
-                fileData = sr.ReadToEnd().Replace("\r", "");
-            }
-            Dictionary<string, string> Properties = new Dictionary<string, string>();
-            string[] kvp;
-            string[] records = fileData.Split("\n".ToCharArray());
-            foreach (string record in records)
-            {
-                kvp = record.Split("=".ToCharArray());
-                Properties.Add(kvp[0], kvp[1]);
-            }
-            return Properties;
-        }
-
         private Dictionary<String, String> list;
         private String filename;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propName"></param>
+        /// <param name="def"></param>
+        /// <returns></returns>
+        public string this[string propName, string def]
+        {
+            get
+            {
+                string value = list[propName];
+                return string.IsNullOrEmpty(value) ? def : value;
+            }
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propName"></param>
+        /// <returns></returns>
+        public string this[string propName]
+        {
+            get
+            {
+                return list[propName];
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="file">Archivo</param>
         public Properties(String file)
         {
             reload(file);
         }
 
-        public String get(String field, String defValue)
-        {
-            return (get(field) == null) ? (defValue) : (get(field));
-        }
-        public String get(String field)
-        {
-            return (list.ContainsKey(field)) ? (list[field]) : (null);
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="field"></param>
+        /// <param name="value"></param>
         public void set(String field, Object value)
         {
             if (!list.ContainsKey(field))
@@ -50,11 +62,17 @@ namespace L2.Net
                 list[field] = value.ToString();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Save()
         {
             Save(this.filename);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filename"></param>
         public void Save(String filename)
         {
             this.filename = filename;
@@ -71,11 +89,18 @@ namespace L2.Net
             file.Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void reload()
         {
             reload(this.filename);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filename"></param>
         public void reload(String filename)
         {
             this.filename = filename;
@@ -87,8 +112,25 @@ namespace L2.Net
                 System.IO.File.Create(filename);
         }
 
+        /// <summary>
+        /// If config is loaded.
+        /// </summary>
+        public bool Loaded
+        {
+            get;
+            protected set;
+        }
+
         private void loadFromFile(String file)
         {
+            if(System.IO.File.Exists(file))
+            {
+                Loaded = true;
+            }
+            else
+            {
+                Loaded = false;
+            }
             foreach (String line in System.IO.File.ReadAllLines(file))
             {
                 if ((!String.IsNullOrEmpty(line)) &&
