@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scripts>
+  <!-- Languages available: Lua/L, CS/CSharp/C#, VB/Visual Basic, no other more -->
+  <!-- In Language Lua, don't use: "References", "" -->
+
+  <!-- Quests  -->
+  <Script File="Quest\ExampleQuest.cs" Language="CS" ClassSpace="Quests.ExampleQuest">
+    <References>
+      <Reference ref="L2.L2Scripting" />
+      <Reference ref="L2.Net"/>
+    </References>
+  </Script>
+
+</Scripts>

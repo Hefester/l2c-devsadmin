@@ -143,9 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\World.cs" />
-    <Compile Include="Game\Data\Scripts\Quest\ExampleQuest.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="Game\Data\Scripts\Quest\ExampleQuest.cs" />
     <Compile Include="InnerNetwork\CacheServiceConnection.cs" />
     <Compile Include="InnerNetwork\ConnectionsManager.cs" />
     <Compile Include="InnerNetwork\GameServiceListener.cs" />
@@ -173,17 +171,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Game\Data\Scripts\scripts.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Game\Data\Scripts\scripts.xml" />
     <Content Include="_ico.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Game\Config\Server.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Game\Config\Server.ini" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
