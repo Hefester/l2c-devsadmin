@@ -39,13 +39,13 @@ namespace L2.Net
             {
                 Logger.WriteLine("Missing File Config: Game/Config/Server.ini");
             }
-            CACHE_IP_ADDRESS = props["CacheServiceAdress","127.0.0.1"];
+            CACHE_IP_ADDRESS = props["CacheServiceAddress","127.0.0.1"];
             CACHE_PORT = int.Parse(props["CacheServicePort", "3001"]);
             CACHE_RECONNECT_INTERVAL = TimeSpan.Parse(props["CacheServiceReconnectInterval", "00:00:10"]);
             CACHE_AUTO_RECONNECT = bool.Parse(props["CacheServiceAutoReconnect", "True"]);
 
             GAME_IP_ADDRESS = props["GameServiceAddress", "127.0.0.1"];
-            GAME_PORT = int.Parse(props["GameServicePort", "7777"]);
+            GAME_PORT = int.Parse(props["GameServicePort", "3002"]);
             GAME_ENABLED_FIREWALL = bool.Parse(props["GameServiceEnabledFirewall", "True"]);
 
             WORLD_IP_ADDRESS = props["WorldAddress", "127.0.0.1"];

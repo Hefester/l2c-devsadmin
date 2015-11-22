@@ -2,7 +2,7 @@
 using System.Net;
 using L2.Net.Network;
 using L2.Net.NpcService.Network;
-using L2.Net.NpcService.Properties;
+using L2.NpcService.Properties;
 
 namespace L2.Net.NpcService
 {

@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using L2.Net.GameService.Properties;
+using L2.GameService.Properties;
 
 namespace L2.Net.GameService.WorldPlane
 {

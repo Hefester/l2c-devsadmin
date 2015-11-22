@@ -36,6 +36,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{52089745-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{A482029F-195B-4790-AF9D-1B4672B6AA11}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9A99886B-52F7-46AB-8173-6E14203CB858}"
+	ProjectSection(SolutionItems) = preProject
+		scripts.xml = scripts.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quests", "Quests", "{F8A662F4-07E8-4D07-AF65-F0778DB01143}"
+	ProjectSection(SolutionItems) = preProject
+		ExampleQuest.cs = ExampleQuest.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,5 +95,7 @@ Global
 		{A9E93252-A198-4A44-AB31-97121E09457F} = {954A4678-62D6-462A-9159-804E961D318E}
 		{52089745-3F79-4C45-8A2B-861C6625429E} = {954A4678-62D6-462A-9159-804E961D318E}
 		{A482029F-195B-4790-AF9D-1B4672B6AA11} = {A25C311D-9120-4DB5-8674-CECCF8E18476}
+		{9A99886B-52F7-46AB-8173-6E14203CB858} = {52089745-3F79-4C45-8A2B-861C6625429E}
+		{F8A662F4-07E8-4D07-AF65-F0778DB01143} = {9A99886B-52F7-46AB-8173-6E14203CB858}
 	EndGlobalSection
 EndGlobal

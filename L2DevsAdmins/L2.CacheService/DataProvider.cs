@@ -1,8 +1,7 @@
 ﻿using System;
 using L2.Net.DataProvider;
 using L2.Net.CacheService.Realtime;
-using L2.Net.CacheService.Properties;
-using L2.Net.Network;
+using L2.CacheService.Properties;
 
 namespace L2.Net.CacheService
 {

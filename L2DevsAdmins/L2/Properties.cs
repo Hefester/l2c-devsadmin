@@ -22,8 +22,16 @@ namespace L2.Net
         {
             get
             {
-                string value = list[propName];
-                return string.IsNullOrEmpty(value) ? def : value;
+                string val = null;
+                try
+                {
+                    val = list[propName];
+                }
+                catch
+                {
+                    Logger.WriteLine("[Config] Missing Property:"+propName);
+                }
+                return string.IsNullOrEmpty(val) ? def : val;
             }
         }
 

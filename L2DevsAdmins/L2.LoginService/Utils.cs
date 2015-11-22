@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using L2.Net.LoginService.Properties;
+using L2.LoginService.Properties;
 
 namespace L2.Net.LoginService
 {

@@ -2,7 +2,7 @@
 using System.Net;
 using L2.Net.LoginService.InnerNetwork;
 using L2.Net.LoginService.OuterNetwork;
-using L2.Net.LoginService.Properties;
+using L2.LoginService.Properties;
 using L2.Net.Network;
 
 namespace L2.Net.LoginService

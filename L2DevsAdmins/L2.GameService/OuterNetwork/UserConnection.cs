@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Sockets;
-using L2.Net.GameService.Properties;
+using L2.GameService.Properties;
 using L2.Net.Network;
 using L2.Net.Structs.Client;
 using System.Text;

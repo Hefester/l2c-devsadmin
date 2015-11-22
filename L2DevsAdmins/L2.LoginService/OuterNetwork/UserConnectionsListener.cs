@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using L2.Net.LoginService.Crypt;
 using L2.Net.LoginService.InnerNetwork;
-using L2.Net.LoginService.Properties;
+using L2.LoginService.Properties;
 using L2.Net.Network;
 using L2.Net.Structs.Services;
 

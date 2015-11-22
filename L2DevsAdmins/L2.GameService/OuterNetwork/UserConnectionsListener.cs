@@ -131,7 +131,7 @@ namespace L2.Net.GameService.OuterNetwork
             if ( socket != null && socket.Connected )
             {
                 UserConnection userConnection = new UserConnection(socket);
-
+                
                 //if ( m_ActiveConnections.Count >= Settings.Default.LoginServiceMaxAwaitingUsersCount )
                 //{
                 //    userConnection.Send(ServerPackets.LoginFailed(UserAuthenticationResponseType.ServerOverloaded));

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Net.Sockets;
 using L2.Net.CacheService.Network.Handlers;
-using L2.Net.CacheService.Properties;
 using L2.Net.Network;
 using L2.Net.Structs.Services;
+using L2.CacheService.Properties;
 
 namespace L2.Net.CacheService.Network
 {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Net;
 using L2.Net.CacheService.Network;
 using L2.Net.DataProvider;
-using L2.Net.CacheService.Properties;
+using L2.CacheService.Properties;
 
 namespace L2.Net.CacheService
 {

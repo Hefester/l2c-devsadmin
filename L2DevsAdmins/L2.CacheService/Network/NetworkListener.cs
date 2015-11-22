@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using L2.Net.Network;
-using L2.Net.CacheService.Properties;
+using L2.CacheService.Properties;
 
 namespace L2.Net.CacheService.Network
 {

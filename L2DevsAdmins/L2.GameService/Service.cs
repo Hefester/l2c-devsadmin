@@ -2,8 +2,9 @@
 using System.Net;
 using L2.Net.GameService.InnerNetwork;
 using L2.Net.GameService.OuterNetwork;
-using L2.Net.GameService.Properties;
+using L2.GameService.Properties;
 using L2.Net.Network;
+using L2.L2Scripting;
 
 namespace L2.Net.GameService
 {
@@ -18,6 +19,7 @@ namespace L2.Net.GameService
         internal static void load()
         {
             Config.load();
+            L2ScriptingEngine.Instance.ToString();
         }
 
         /// <summary>
