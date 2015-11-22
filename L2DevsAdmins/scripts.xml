@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scripts>
+  <!-- Languages available: Lua/L, CS/CSharp/C#, VB/Visual Basic, no other more -->
+  <!-- In Language Lua, don't use: "References", "" -->
+  
+  <!-- Quests  -->
+  <Script File="" Language="Lua" NameSpace="" NameClass="">
+    
+  </Script>
+  
+  
+  
+
+  
+</Scripts>
